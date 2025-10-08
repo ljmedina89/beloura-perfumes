@@ -27,7 +27,7 @@ export default function BelouraPerfumes() {
   const [sort, setSort] = useState("relevance");
 
   useEffect(() => {
-    const url = import.meta?.env?.VITE_PRODUCTS_URL || "/products.json";
+    const url = (import.meta?.env?.VITE_PRODUCTS_URL?.trim()) || "./products.json";
     fetch(url)
       .then((r) => r.json())
       .then((j) => setData(Array.isArray(j) ? j : []))
