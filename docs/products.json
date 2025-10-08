@@ -5,9 +5,13 @@
     "marca": "Lattafa",
     "tamano_ml": 100,
     "precio_usd": 39.99,
-    "notas": ["canela", "vainilla", "praliné"],
+    "notas": [
+      "canela",
+      "vainilla",
+      "praliné"
+    ],
     "stock": 6,
-    "img": "img/khamrah.webp",
+    "img": "/img/khamrah.webp",
     "created_at": "2025-09-15"
   },
   {
@@ -16,9 +20,12 @@
     "marca": "Lattafa",
     "tamano_ml": 100,
     "precio_usd": 34.9,
-    "notas": ["pimienta", "incienso"],
+    "notas": [
+      "pimienta",
+      "incienso"
+    ],
     "stock": 3,
-    "img": "img/asad-black.webp",
+    "img": "/img/asad-black.webp",
     "created_at": "2025-09-20"
   }
 ]
