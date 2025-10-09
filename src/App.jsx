@@ -26,13 +26,22 @@ export default function BelouraPerfumes() {
   const [onlyStock, setOnlyStock] = useState(true);
   const [sort, setSort] = useState("relevance");
 
+const SHEETS_URL = "https://script.google.com/macros/s/AKfycbxLlL1uV8ldXI94GwDUsrp_eh0_O5iM5BqghghScbo8hcXeWKKyDvctsLVjKyCve98JRw/exec"; // <-- tu /exec aquí
   useEffect(() => {
-    const url = (import.meta?.env?.VITE_PRODUCTS_URL?.trim()) || "./products.json";
-    fetch(url)
-      .then((r) => r.json())
-      .then((j) => setData(Array.isArray(j) ? j : []))
-      .catch(() => setData([]));
-  }, []);
+  const url = SHEETS_URL + (SHEETS_URL.includes("?") ? `&v=${Date.now()}` : `?v=${Date.now()}`);
+  fetch(url)
+    .then(async (r) => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const j = await r.json();
+      setData(Array.isArray(j) ? j : []);
+    })
+    .catch((err) => {
+      console.error("Inventario ERROR:", err);
+      setData([]);
+      // (opcional) muestra un aviso en pantalla:
+      // setLoadErr(`No se pudo cargar inventario desde: ${SHEETS_URL} → ${String(err)}`);
+    });
+}, []);
 
   const brands = useMemo(() => ["Todas", ...Array.from(new Set(data.map((d) => d.marca).filter(Boolean)))], [data]);
   const sizes  = useMemo(() => ["Todos", ...Array.from(new Set(data.map((d) => d.tamano_ml).filter(Boolean)))], [data]);
