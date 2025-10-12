@@ -100,9 +100,59 @@ function prepararModal(){
   modal.addEventListener('click', (e) => {
     if (e.target.dataset.close === 'true') closeModal();
   });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
+  /* ====== HERO SLIDER SENCILLO ====== */
+const HERO_SLIDES = [
+  'img/hero-1.jpg',
+  'img/hero-2.jpg',
+  'img/hero-3.jpg'
+];
+let heroIndex = 0, heroTimer;
+
+function initHero() {
+  const slide = document.getElementById('hero-slide');
+  const dots = document.getElementById('hero-dots');
+
+  // crear dots
+  dots.innerHTML = HERO_SLIDES.map((_,i)=>`<span class="dot${i===0?' active':''}"></span>`).join('');
+
+  const render = () => {
+    slide.style.backgroundImage = `url('${HERO_SLIDES[heroIndex]}')`;
+    dots.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === heroIndex));
+  };
+
+  // autoplay
+  heroTimer = setInterval(() => {
+    heroIndex = (heroIndex + 1) % HERO_SLIDES.length;
+    render();
+  }, 4000);
+
+  dots.addEventListener('click', (e) => {
+    const idx = [...dots.children].indexOf(e.target);
+    if (idx >= 0) { heroIndex = idx; render(); }
   });
+
+  render();
+}
+
+/* ====== CTA/Goto categoría ====== */
+function gotoCategoria(cat) {
+  categoriaActual = cat;
+  // marcar pestaña y renderizar
+  document.querySelectorAll('.tab').forEach(b => {
+    const active = b.dataset.cat === cat;
+    b.classList.toggle('active', active);
+  });
+  mostrarCategoria(cat);
+  // hacer scroll suave al catálogo
+  document.getElementById('productos-container')?.scrollIntoView({ behavior: 'smooth' });
+}
+
+/* Inicia todo (llama también initHero cuando carguen productos) */
+document.addEventListener('DOMContentLoaded', () => {
+  cargarProductos();
+  initHero();
+});
+
 }
 
 function openModal(p, categoria){
