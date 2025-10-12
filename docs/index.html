@@ -9,7 +9,41 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-<body>
+
+  <!-- Modal de producto -->
+<div id="product-modal" class="modal hidden" aria-hidden="true" role="dialog">
+  <div class="modal__overlay" data-close="true"></div>
+  <div class="modal__card" role="document" aria-labelledby="modal-title">
+    <button class="modal__close" aria-label="Cerrar" data-close="true">×</button>
+
+    <div class="modal__media">
+      <img id="modal-img" alt="" />
+      <div id="modal-thumbs" class="modal__thumbs"></div>
+    </div>
+
+    <div class="modal__content">
+      <h2 id="modal-title"></h2>
+      <p id="modal-desc"></p>
+
+      <div class="modal__meta">
+        <div><strong>Precio:</strong> <span id="modal-price"></span></div>
+        <div id="modal-size"></div>
+      </div>
+
+      <div id="modal-notes"></div>
+      <div id="modal-features"></div>
+
+      <div class="modal__stock" id="modal-stock"></div>
+
+      <div class="modal__actions">
+        <a id="modal-wa" class="btn" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  <body>
   <header class="header">
     <div class="brand">
       <span class="logo">B</span>
