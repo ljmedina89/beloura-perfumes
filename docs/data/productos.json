@@ -1,10 +1,10 @@
 {
   "perfumes": [
     {
-      "nombre": "Carolina Herrera 212 Men",
-      "precio": 85,
-      "imagen": "img/perfume-212.jpg",
-      "descripcion": "Fragancia clásica masculina de larga duración."
+      "nombre": "Bleu de Chanel",
+      "precio": 75,
+      "imagen": "img/bleu.png",
+      "descripcion": "Fragancia amaderada aromática para hombres"
     },
     {
       "nombre": "Dior Sauvage",
