@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beloura Store</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <span class="logo">B</span>
+      <h1>Beloura Store</h1>
+    </div>
+    <nav class="nav">
+      <button class="tab active" data-cat="perfumes">Perfumes</button>
+      <button class="tab" data-cat="streaming">Streaming</button>
+      <button class="tab" data-cat="generales">Productos</button>
+      <input id="search" type="search" placeholder="Buscar producto...">
+    </nav>
+  </header>
+
+  <main>
+    <section id="productos-container" class="grid"></section>
+  </main>
+
+  <footer class="footer">
+    <small>© Beloura • Catálogo estático</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

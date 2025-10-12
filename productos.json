@@ -1,0 +1,44 @@
+{
+  "perfumes": [
+    {
+      "nombre": "Carolina Herrera 212 Men",
+      "precio": 85,
+      "imagen": "img/perfume-212.jpg",
+      "descripcion": "Fragancia clásica masculina de larga duración."
+    },
+    {
+      "nombre": "Dior Sauvage",
+      "precio": 120,
+      "imagen": "img/sauvage.jpg",
+      "descripcion": "Aroma intenso y moderno."
+    }
+  ],
+  "streaming": [
+    {
+      "nombre": "Netflix Premium 1 mes",
+      "precio": 6,
+      "imagen": "img/netflix.jpg",
+      "descripcion": "Perfil privado en cuenta compartida, UHD (según disponibilidad)."
+    },
+    {
+      "nombre": "Disney+ 1 mes",
+      "precio": 5,
+      "imagen": "img/disney.jpg",
+      "descripcion": "Acceso a contenidos Disney, Marvel, Pixar y Star Wars."
+    }
+  ],
+  "generales": [
+    {
+      "nombre": "Smartwatch Beloura Pro",
+      "precio": 40,
+      "imagen": "img/smartwatch.jpg",
+      "descripcion": "Reloj inteligente con monitoreo de salud y notificaciones."
+    },
+    {
+      "nombre": "Audífonos Bluetooth Pro",
+      "precio": 25,
+      "imagen": "img/audifonos.jpg",
+      "descripcion": "Alta fidelidad con cancelación de ruido."
+    }
+  ]
+}
