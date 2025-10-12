@@ -1,10 +1,12 @@
 let productos = {};
 let categoriaActual = 'perfumes';
 
+// ⚠️ Pon tu número en formato internacional, sin "+" ni espacios:
+const WHATSAPP_NUMBER = '9726070561'; // <-- cámbialo
+
 async function cargarProductos() {
   try {
-    // Desde docs/ sube un nivel a /data/productos.json
-    const resp = await fetch('data/productos.json'); { cache: 'no-store' });
+    const resp = await fetch('data/productos.json?v=' + Date.now(), { cache: 'no-store' });
     if (!resp.ok) throw new Error('No se pudo cargar productos.json');
     productos = await resp.json();
     renderTabs();
@@ -12,7 +14,7 @@ async function cargarProductos() {
   } catch (e) {
     console.error(e);
     const c = document.getElementById('productos-container');
-    c.innerHTML = `<div class="error">⚠️ Error cargando productos. Verifica la ruta ../data/productos.json</div>`;
+    c.innerHTML = `<div class="error">⚠️ Error cargando productos. Verifica la ruta data/productos.json</div>`;
   }
 }
 
@@ -28,7 +30,6 @@ function renderTabs() {
     };
   });
 
-  // Búsqueda
   const search = document.getElementById('search');
   search.addEventListener('input', () => mostrarCategoria(categoriaActual, search.value.trim().toLowerCase()));
 }
@@ -49,30 +50,27 @@ function mostrarCategoria(categoria, filtro = '') {
   });
 
   if (lista.length === 0) {
-    contenedor.innerHTML = `<div class="empty">Sin resultados para “${filtro}”.</div>`;
+    contenedor.innerHTML = `<div class="empty">Sin resultados para “${escapeHtml(filtro)}”.</div>`;
     return;
   }
 
-lista.forEach(p => {
-  const card = document.createElement('article');
-  card.className = 'card';
-  card.innerHTML = `
-    <div class="thumb"><img loading="lazy" src="${p.imagen}" alt="${escapeHtml(p.nombre)}"></div>
-    <div class="info">
-      <h3>${escapeHtml(p.nombre)}</h3>
-      <p>${escapeHtml(p.descripcion)}</p>
-      <div class="price">$${Number(p.precio).toFixed(2)}</div>
-      <a 
-  class="btn" 
-  href="https://wa.me/16825551234?text=Hola%20Beloura,%20me%20interesa%20el%20producto%20${encodeURIComponent(p.nombre)}" 
-  target="_blank"
->
-  Pedir por WhatsApp
-</a>
-    </div>
-  `;
-  contenedor.appendChild(card);
-});;
+  lista.forEach(p => {
+    const waText = `Hola Beloura, me interesa ${p.nombre} (${categoria}). Precio: $${Number(p.precio).toFixed(2)}.`;
+    const waUrl  = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
+
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="thumb"><img loading="lazy" src="${p.imagen}" alt="${escapeHtml(p.nombre)}"></div>
+      <div class="info">
+        <h3>${escapeHtml(p.nombre)}</h3>
+        <p>${escapeHtml(p.descripcion)}</p>
+        <div class="price">$${Number(p.precio).toFixed(2)}</div>
+        <a class="btn" href="${waUrl}" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+      </div>
+    `;
+    contenedor.appendChild(card);
+  });
 }
 
 function escapeHtml(str) {
