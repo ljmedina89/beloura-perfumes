@@ -1,8 +1,8 @@
 let productos = {};
 let categoriaActual = 'perfumes';
 
-// ⚠️ Pon tu número en formato internacional, sin "+" ni espacios:
-const WHATSAPP_NUMBER = '19726070561'; // <-- cámbialo
+// ⚠️ Tu número WhatsApp en formato internacional, sin "+" ni espacios
+const WHATSAPP_NUMBER = '593999999999';
 
 async function cargarProductos() {
   try {
@@ -11,6 +11,7 @@ async function cargarProductos() {
     productos = await resp.json();
     renderTabs();
     mostrarCategoria(categoriaActual);
+    prepararModal();
   } catch (e) {
     console.error(e);
     const c = document.getElementById('productos-container');
@@ -54,8 +55,8 @@ function mostrarCategoria(categoria, filtro = '') {
     return;
   }
 
-  lista.forEach(p => {
-    const waText = `Hola Beloura, me interesa ${p.nombre} (${categoria}). Precio: $${Number(p.precio).toFixed(2)}.`;
+  lista.forEach((p, idx) => {
+    const waText = `Hola Beloura, me interesa ${p.nombre} (${categoria}). Precio: $${num(p.precio)}.`;
     const waUrl  = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
 
     const card = document.createElement('article');
@@ -65,21 +66,117 @@ function mostrarCategoria(categoria, filtro = '') {
       <div class="info">
         <h3>${escapeHtml(p.nombre)}</h3>
         <p>${escapeHtml(p.descripcion)}</p>
-        <div class="price">$${Number(p.precio).toFixed(2)}</div>
-        <a class="btn" href="${waUrl}" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        <div class="price">$${num(p.precio)}</div>
+        <div class="card__actions" style="display:flex; gap:8px; justify-content:center;">
+          <button class="btn btn-detalle" data-idx="${idx}" data-cat="${categoria}">Ver detalles</button>
+          <a class="btn" href="${waUrl}" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
       </div>
     `;
+    // abrir modal también al hacer click en la imagen o título
+    card.querySelector('.thumb').addEventListener('click', () => openModal(p, categoria));
+    card.querySelector('h3').addEventListener('click', () => openModal(p, categoria));
+    card.querySelector('.btn-detalle').addEventListener('click', () => openModal(p, categoria));
     contenedor.appendChild(card);
   });
 }
 
+/* ===== Modal ===== */
+let modal, modalImg, modalThumbs, modalTitle, modalDesc, modalPrice, modalSize, modalNotes, modalFeatures, modalStock, modalWa;
+
+function prepararModal(){
+  modal = document.getElementById('product-modal');
+  modalImg = document.getElementById('modal-img');
+  modalThumbs = document.getElementById('modal-thumbs');
+  modalTitle = document.getElementById('modal-title');
+  modalDesc = document.getElementById('modal-desc');
+  modalPrice = document.getElementById('modal-price');
+  modalSize = document.getElementById('modal-size');
+  modalNotes = document.getElementById('modal-notes');
+  modalFeatures = document.getElementById('modal-features');
+  modalStock = document.getElementById('modal-stock');
+  modalWa = document.getElementById('modal-wa');
+
+  modal.addEventListener('click', (e) => {
+    if (e.target.dataset.close === 'true') closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+}
+
+function openModal(p, categoria){
+  // imagen principal
+  modalImg.src = p.imagen;
+  modalImg.alt = p.nombre || '';
+
+  // miniaturas
+  modalThumbs.innerHTML = '';
+  const galeria = Array.isArray(p.galeria) && p.galeria.length ? p.galeria : [p.imagen];
+  galeria.forEach((src, i) => {
+    const t = document.createElement('img');
+    t.src = src; t.alt = (p.nombre || '') + ' ' + (i+1);
+    if (i === 0) t.classList.add('active');
+    t.addEventListener('click', () => {
+      modalImg.src = src;
+      modalThumbs.querySelectorAll('img').forEach(x => x.classList.remove('active'));
+      t.classList.add('active');
+    });
+    modalThumbs.appendChild(t);
+  });
+
+  // textos
+  modalTitle.textContent = p.nombre || '';
+  modalDesc.textContent = p.descripcion_larga || p.descripcion || '';
+  modalPrice.textContent = `$${num(p.precio)}`;
+  modalSize.innerHTML = p.tamano ? `<strong>Tamaño:</strong> ${escapeHtml(p.tamano)}` : '';
+
+  // notas
+  if (Array.isArray(p.notas) && p.notas.length){
+    modalNotes.innerHTML = `<strong>Notas:</strong> ${p.notas.map(escapeHtml).join(', ')}`;
+  } else { modalNotes.innerHTML = ''; }
+
+  // características
+  if (Array.isArray(p.caracteristicas) && p.caracteristicas.length){
+    modalFeatures.innerHTML = `<strong>Características:</strong> <ul style="margin:6px 0 0 18px">${p.caracteristicas.map(c=>`<li>${escapeHtml(c)}</li>`).join('')}</ul>`;
+  } else { modalFeatures.innerHTML = ''; }
+
+  // stock
+  const usa = p.stock?.usa ?? null;
+  const ecu = p.stock?.ecuador ?? null;
+  modalStock.innerHTML = [
+    renderStockBadge('EE. UU.', usa),
+    renderStockBadge('Ecuador', ecu)
+  ].filter(Boolean).join('') || '<span class="badge">Sin info de stock</span>';
+
+  // WhatsApp
+  const waText = `Hola Beloura, me interesa ${p.nombre} (${categoria})${p.tamano ? ' - ' + p.tamano : ''}. Precio: $${num(p.precio)}.`;
+  modalWa.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
+
+  // mostrar
+  modal.classList.remove('hidden');
+  modal.setAttribute('aria-hidden', 'false');
+}
+
+function closeModal(){
+  modal.classList.add('hidden');
+  modal.setAttribute('aria-hidden', 'true');
+}
+
+function renderStockBadge(label, value){
+  if (value === null || value === undefined) return '';
+  let cls = 'ok', text = `${value} en ${label}`;
+  if (Number(value) <= 0) { cls = 'out'; text = `Agotado en ${label}`; }
+  else if (Number(value) <= 2) { cls = 'low'; }
+  return `<span class="badge ${cls}">${text}</span>`;
+}
+
+/* ===== Utils ===== */
 function escapeHtml(str) {
   return (str ?? '').toString()
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#039;');
 }
+function num(n){ return Number(n ?? 0).toFixed(2); }
 
 document.addEventListener('DOMContentLoaded', cargarProductos);
