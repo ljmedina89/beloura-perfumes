@@ -53,26 +53,26 @@ function mostrarCategoria(categoria, filtro = '') {
     return;
   }
 
-  lista.forEach(p => {
-    const card = document.createElement('article');
-    card.className = 'card';
-    card.innerHTML = `
-      <div class="thumb"><img loading="lazy" src="${p.imagen}" alt="${escapeHtml(p.nombre)}"></div>
-      <div class="info">
-        <h3>${escapeHtml(p.nombre)}</h3>
-        <p>${escapeHtml(p.descripcion)}</p>
-        <div class="price">$${Number(p.precio).toFixed(2)}</div>
-        <a 
-  class="btn" 
-  href="https://wa.me/16825551234?text=Hola%20Beloura,%20me%20interesa%20el%20producto%20${encodeURIComponent(p.nombre)}" 
-  target="_blank"
->
-  Pedir por WhatsApp
-</a>
-      </div>
-    `;
-    contenedor.appendChild(card);
-  });
+lista.forEach(p => {
+  const card = document.createElement('article');
+  card.className = 'card';
+  card.innerHTML = `
+    <div class="thumb"><img loading="lazy" src="${p.imagen}" alt="${escapeHtml(p.nombre)}"></div>
+    <div class="info">
+      <h3>${escapeHtml(p.nombre)}</h3>
+      <p>${escapeHtml(p.descripcion)}</p>
+      <div class="price">$${Number(p.precio).toFixed(2)}</div>
+      <a 
+        class="btn" 
+        href="https://wa.me/19726070561?text=Hola%20Beloura,%20me%20interesa%20el%20producto%20${encodeURIComponent(p.nombre)}" 
+        target="_blank"
+      >
+        Pedir por WhatsApp
+      </a>
+    </div>
+  `;
+  contenedor.appendChild(card);
+});;
 }
 
 function escapeHtml(str) {
