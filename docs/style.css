@@ -183,3 +183,10 @@ body {
   color: #fff; padding: 6px 10px; border-radius: 999px; font-weight: 600;
 }
 
+.topbar{
+  background:#0b132b; color:#cfe9ff; font-size:.9rem;
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:8px; padding:8px 12px; align-items:center;
+}
+.topbar a{ color:#e8f6ff; text-decoration:none; }
+.topbar__item{ text-align:center; }
