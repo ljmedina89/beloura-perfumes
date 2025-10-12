@@ -62,7 +62,13 @@ function mostrarCategoria(categoria, filtro = '') {
         <h3>${escapeHtml(p.nombre)}</h3>
         <p>${escapeHtml(p.descripcion)}</p>
         <div class="price">$${Number(p.precio).toFixed(2)}</div>
-        <button class="btn">Quiero este</button>
+        <a 
+  class="btn" 
+  href="https://wa.me/16825551234?text=Hola%20Beloura,%20me%20interesa%20el%20producto%20${encodeURIComponent(p.nombre)}" 
+  target="_blank"
+>
+  Pedir por WhatsApp
+</a>
       </div>
     `;
     contenedor.appendChild(card);
