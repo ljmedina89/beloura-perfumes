@@ -135,4 +135,51 @@ body {
 .badge.ok { background:#d1fae5; color:#065f46; }
 .badge.low { background:#fef3c7; color:#92400e; }
 .badge.out { background:#fee2e2; color:#991b1b; }
+/* ====== HERO ====== */
+.hero { position: relative; height: 360px; border-radius: 0; overflow: hidden; }
+.hero__slide {
+  position: relative; width: 100%; height: 100%;
+  background: #0b132b url('img/hero-1.jpg') center/cover no-repeat;
+  display: grid; place-items: center; isolation: isolate;
+}
+.hero__slide::after { /* degradado oscuro para legibilidad */
+  content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.55));
+  z-index: 0;
+}
+.hero__content { position: relative; z-index: 1; color: #fff; text-align: center; padding: 16px; }
+.hero__content h2 { font-size: clamp(1.4rem, 3vw, 2.2rem); margin: 0 0 8px; }
+.hero__content p { margin: 0 0 16px; opacity: .9; }
+.hero__cta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.btn-light { background: #ffffff; color: #0b132b; }
+
+.hero__dots { position: absolute; bottom: 10px; left: 0; right: 0; display:flex; gap:6px; justify-content:center; z-index:1; }
+.hero__dots .dot {
+  width: 8px; height: 8px; border-radius: 999px; background: rgba(255,255,255,.45);
+}
+.hero__dots .dot.active { background: #fff; }
+
+/* ====== BENEFITS BAR ====== */
+.benefits {
+  background: #0b132b; color: #e5f9f8;
+  display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 12px; padding: 16px;
+}
+.benefit { display: flex; align-items: center; gap: 10px; }
+.benefit__icon { font-size: 1.4rem; }
+
+/* ====== HOME CATEGORIES ====== */
+.home-cats {
+  padding: 20px; display: grid; gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+}
+.home-cat {
+  position: relative; cursor: pointer; overflow: hidden; border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(17,24,39,.1);
+}
+.home-cat img { width: 100%; height: 180px; object-fit: cover; transition: transform .3s ease; display:block; }
+.home-cat:hover img { transform: scale(1.05); }
+.home-cat__label {
+  position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,.55);
+  color: #fff; padding: 6px 10px; border-radius: 999px; font-weight: 600;
+}
 
