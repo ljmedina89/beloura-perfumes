@@ -2,7 +2,7 @@ let productos = {};
 let categoriaActual = 'perfumes';
 
 // ⚠️ Pon tu número en formato internacional, sin "+" ni espacios:
-const WHATSAPP_NUMBER = '9726070561'; // <-- cámbialo
+const WHATSAPP_NUMBER = '19726070561'; // <-- cámbialo
 
 async function cargarProductos() {
   try {
