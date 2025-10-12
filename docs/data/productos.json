@@ -4,8 +4,14 @@
       "nombre": "Bleu de Chanel",
       "precio": 75,
       "imagen": "img/bleu.png",
-      "descripcion": "Fragancia amaderada aromática para hombres"
-    },
+      "galeria": ["img/sauvage.jpg", "img/sauvage-2.jpg"], 
+      "tamano": "100 ml",
+      "notas": ["Bergamota", "Pimienta", "Ambroxan"],
+      "caracteristicas": ["Alta proyección", "Larga duración"],
+      "descripcion": "Fragancia amaderada aromática para hombres",
+      "descripcion_larga": "Fragancia masculina versátil para uso diario y ocasiones especiales.",
+      "stock": { "usa": 7, "ecuador": 3 }
+     },
     {
       "nombre": "Dior Sauvage",
       "precio": 94.55,
@@ -17,6 +23,12 @@
       "precio": 39.99,
       "imagen": "img/mandarin.webp",
       "descripcion": "Aroma intenso y moderno."
+    },
+    {
+      "nombre": "",
+      "precio": 6,
+      "imagen": "img/netflix.jpg",
+      "descripcion": "Perfil privado en cuenta compartida, UHD (según disponibilidad)."
     }
   ],
   "streaming": [
@@ -26,7 +38,7 @@
       "imagen": "img/netflix.jpg",
       "descripcion": "Perfil privado en cuenta compartida, UHD (según disponibilidad)."
     },
-    {
+        {
       "nombre": "Disney+ 1 mes",
       "precio": 5,
       "imagen": "img/disney.jpg",
