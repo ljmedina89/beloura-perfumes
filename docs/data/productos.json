@@ -23,12 +23,6 @@
       "precio": 39.99,
       "imagen": "img/mandarin.webp",
       "descripcion": "Aroma intenso y moderno."
-    },
-    {
-      "nombre": "",
-      "precio": 6,
-      "imagen": "img/netflix.jpg",
-      "descripcion": "Perfil privado en cuenta compartida, UHD (según disponibilidad)."
     }
   ],
   "streaming": [
