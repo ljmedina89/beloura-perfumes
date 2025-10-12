@@ -4,7 +4,7 @@ let categoriaActual = 'perfumes';
 async function cargarProductos() {
   try {
     // Desde docs/ sube un nivel a /data/productos.json
-    const resp = await fetch('../data/productos.json', { cache: 'no-store' });
+    const resp = await fetch('data/productos.json'); { cache: 'no-store' });
     if (!resp.ok) throw new Error('No se pudo cargar productos.json');
     productos = await resp.json();
     renderTabs();
