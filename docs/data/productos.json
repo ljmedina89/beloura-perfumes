@@ -8,8 +8,14 @@
     },
     {
       "nombre": "Dior Sauvage",
-      "precio": 120,
+      "precio": 94.55,
       "imagen": "img/sauvage.jpg",
+      "descripcion": "Aroma intenso y moderno."
+    }
+    {
+      "nombre": "Odyssey Mandarin Sky",
+      "precio": 39.99,
+      "imagen": "img/mandarin.webp",
       "descripcion": "Aroma intenso y moderno."
     }
   ],
