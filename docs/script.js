@@ -230,6 +230,22 @@ function gotoCategoria(cat) {
 // 👇 esto hace que el onclick del HTML funcione siempre
 window.gotoCategoria = gotoCategoria;
 
+function gotoCategoria(cat) {
+  categoriaActual = cat;
+
+  // marcar pestañas
+  document.querySelectorAll('.tab').forEach(b => {
+    b.classList.toggle('active', b.dataset.cat === cat);
+  });
+
+  // pintar productos y hacer scroll
+  mostrarCategoria(cat);
+  document.getElementById('productos-container')
+    ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// 👇 esto hace que el onclick del HTML funcione siempre
+window.gotoCategoria = gotoCategoria;
 /* Inicia todo (llama también initHero cuando carguen productos) */
 document.addEventListener('DOMContentLoaded', () => {
   cargarProductos();
