@@ -81,6 +81,81 @@ function mostrarCategoria(categoria, filtro = '') {
   });
 }
 
+/* ===== DESTACADOS ===== */
+function renderDestacados(){
+  const box = document.getElementById('featured-container');
+  if (!box) return;
+  // toma los 2 primeros de cada categoría (si existen)
+  const picks = []
+    .concat((productos.perfumes||[]).slice(0,2))
+    .concat((productos.streaming||[]).slice(0,2))
+    .concat((productos.generales||[]).slice(0,2));
+
+  box.innerHTML = '';
+  picks.forEach(p => box.appendChild(buildCard(p, guessCategoria(p))));
+}
+
+// intenta inferir categoría por presencia en productos
+function guessCategoria(p){
+  if ((productos.perfumes||[]).includes(p)) return 'perfumes';
+  if ((productos.streaming||[]).includes(p)) return 'streaming';
+  if ((productos.generales||[]).includes(p)) return 'generales';
+  return '';
+}
+
+/* Reusa una sola fábrica de tarjetas: con ribbon de stock */
+function buildCard(p, categoria){
+  const waText = `Hola Beloura, me interesa ${p.nombre} (${categoria}). Precio: $${num(p.precio)}.`;
+  const waUrl  = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
+
+  const card = document.createElement('article');
+  card.className = 'card';
+  card.style.position = 'relative';
+  const ribbon = stockRibbon(p); // null o elemento
+
+  card.innerHTML = `
+    <div class="thumb"><img loading="lazy" src="${p.imagen}" alt="${escapeHtml(p.nombre)}"></div>
+    <div class="info">
+      <h3>${escapeHtml(p.nombre)}</h3>
+      <p>${escapeHtml(p.descripcion || '')}</p>
+      <div class="price">$${num(p.precio)}</div>
+      <div class="card__actions" style="display:flex; gap:8px; justify-content:center;">
+        <button class="btn btn-detalle">Ver detalles</button>
+        <a class="btn" href="${waUrl}" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  `;
+  if (ribbon) card.prepend(ribbon);
+
+  // abrir modal con click
+  card.querySelector('.thumb').addEventListener('click', () => openModal(p, categoria));
+  card.querySelector('h3').addEventListener('click', () => openModal(p, categoria));
+  card.querySelector('.btn-detalle').addEventListener('click', () => openModal(p, categoria));
+  return card;
+}
+
+function stockRibbon(p){
+  const usa = p.stock?.usa ?? null;
+  const ecu = p.stock?.ecuador ?? null;
+  const total = [usa, ecu].filter(v => v!==null && v!==undefined)
+                          .reduce((a,b)=>a+Number(b), 0);
+  if (total === 0) {
+    const r = document.createElement('div');
+    r.className = 'ribbon out'; r.textContent = 'AGOTADO';
+    return r;
+  }
+  if (total > 0 && total <= 2) {
+    const r = document.createElement('div');
+    r.className = 'ribbon'; r.style.background='#f59e0b'; r.textContent = 'ÚLTIMAS UNIDADES';
+    return r;
+  }
+  if (total > 2) {
+    const r = document.createElement('div');
+    r.className = 'ribbon'; r.textContent = 'EN STOCK';
+    return r;
+  }
+  return null;
+}
 /* ===== Modal ===== */
 let modal, modalImg, modalThumbs, modalTitle, modalDesc, modalPrice, modalSize, modalNotes, modalFeatures, modalStock, modalWa;
 
