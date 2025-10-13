@@ -206,4 +206,3 @@ body {
   background:#25D366; color:#fff; border-radius:999px; box-shadow:0 10px 22px rgba(0,0,0,.2); z-index:60;
 }
 .wa-float:hover{ filter:brightness(.95); }
-.hero { display: none; }
