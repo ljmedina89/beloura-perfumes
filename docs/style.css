@@ -192,3 +192,11 @@ body {
 .topbar__item{ text-align:center; }
 .home-cat{ border:1px solid #eef2f7; }
 .home-cat__label{ backdrop-filter:saturate(140%) blur(2px); }
+.featured{ padding: 12px 20px; }
+.featured__head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.ribbon{
+  position:absolute; top:10px; left:-8px; background:#10b981; color:#fff;
+  padding:4px 12px; font-size:.8rem; font-weight:700; transform:rotate(-8deg);
+  border-radius:6px;
+}
+.ribbon.out{ background:#ef4444; }
