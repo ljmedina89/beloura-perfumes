@@ -55,9 +55,11 @@ function mostrarCategoria(categoria, filtro = '') {
     return;
   }
 
-  lista.forEach((p, idx) => {
-    const waText = `Hola Beloura, me interesa ${p.nombre} (${categoria}). Precio: $${num(p.precio)}.`;
-    const waUrl  = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
+  lista.forEach(p => {
+  const card = buildCard(p, categoria);
+  contenedor.appendChild(card);
+});
+
 
     const card = document.createElement('article');
     card.className = 'card';
