@@ -4,6 +4,7 @@
       "nombre": "Dior Sauvage",
       "precio": 95,
       "imagen": "img/sauvage.jpg",
+      "destacado": true,
       "galeria": [
         "img/sauvage.jpg",
         "img/sauvage-2.jpg"
@@ -29,6 +30,7 @@
       "nombre": "Bleu de Chanel",
       "precio": 75,
       "imagen": "img/bleu.png",
+      "destacado": true,
       "galeria": [
         "img/bleu.jpg"
       ],
@@ -53,6 +55,7 @@
       "nombre": "Valentino's Born in Roma GOLD",
       "precio": 98,
       "imagen": "img/gold.webp",
+      "destacado": true,
       "galeria": [
         "img/gold.jpg"
       ],
@@ -77,6 +80,7 @@
       "nombre": "Valentino Born in Roma Intense",
       "precio": 98,
       "imagen": "img/rosado.webp",
+      "destacado": true,
       "galeria": [
         "img/rosado-2.webp"
       ],
