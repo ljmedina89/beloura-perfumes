@@ -129,7 +129,7 @@
     {
       "nombre": "Max (HBO) 1 mes",
       "precio": 3.50,
-      "imagen": "img/max.jpg",
+      "imagen": "img/hbo.webp",
       "descripcion": "Series y películas de Warner/HBO.",
       "descripcion_larga": "Incluye acceso a Max durante 30 días.",
       "stock": {
