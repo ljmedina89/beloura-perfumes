@@ -10,6 +10,7 @@ async function cargarProductos() {
     if (!resp.ok) throw new Error('No se pudo cargar productos.json');
     productos = await resp.json();
     renderTabs();
+    renderDestacados();
     mostrarCategoria(categoriaActual);
     prepararModal();
   } catch (e) {
