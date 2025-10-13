@@ -68,13 +68,25 @@ function mostrarCategoria(categoria, filtro = '') {
 function renderDestacados(){
   const box = document.getElementById('featured-container');
   if (!box) return;
-  const picks = []
+
+  // 1) Toma explícitamente los marcados como destacado
+  const marked = []
+    .concat((productos.perfumes||[]).filter(p => p.destacado))
+    .concat((productos.streaming||[]).filter(p => p.destacado))
+    .concat((productos.generales||[]).filter(p => p.destacado));
+
+  // 2) Si no hay marcados, toma 2 de cada categoría como fallback
+  const fallback = []
     .concat((productos.perfumes||[]).slice(0,2))
     .concat((productos.streaming||[]).slice(0,2))
     .concat((productos.generales||[]).slice(0,2));
+
+  const picks = marked.length ? marked : fallback;
+
   box.innerHTML = '';
   picks.forEach(p => box.appendChild(buildCard(p, guessCategoria(p))));
 }
+
 function guessCategoria(p){
   if ((productos.perfumes||[]).includes(p)) return 'perfumes';
   if ((productos.streaming||[]).includes(p)) return 'streaming';
