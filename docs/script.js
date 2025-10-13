@@ -180,7 +180,7 @@ function prepararModal(){
   });
   /* ====== HERO SLIDER SENCILLO ====== */
 const HERO_SLIDES = [
-  'img/hero-1.jpg',
+  'img/beloura.png',
   'img/hero-2.jpg',
   'img/hero-3.webp'
 ];
