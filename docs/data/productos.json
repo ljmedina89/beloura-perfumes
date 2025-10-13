@@ -28,7 +28,7 @@
     {
       "nombre": "Bleu de Chanel",
       "precio": 75,
-      "imagen": "img/bleu.webp",
+      "imagen": "img/bleu.png",
       "galeria": [
         "img/bleu.jpg"
       ],
