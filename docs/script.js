@@ -210,12 +210,27 @@ function initHero() {
 /* ===== Navegación desde home y export ===== */
 function gotoCategoria(cat) {
   categoriaActual = cat;
-  document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+  document.querySelectorAll('.tab')
+    .forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
   mostrarCategoria(cat);
   const cont = document.getElementById('productos-container');
   if (cont && cont.scrollIntoView) cont.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
-window.gotoCategoria = gotoCategoria;
+window.gotoCategoria = gotoCategoria; // <- imprescindible para onclick/data-cat
+
+function wireHomeCategories() {
+  document.querySelectorAll('.home-cat').forEach(el => {
+    const cat = el.getAttribute('data-cat');
+    if (cat) el.addEventListener('click', () => gotoCategoria(cat));
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  cargarProductos();
+  initHero && initHero();
+  wireHomeCategories(); // <- asegura los clicks
+});
+
 
 /* ===== Utils ===== */
 function escapeHtml(str){ return (str ?? '').toString().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;'); }
