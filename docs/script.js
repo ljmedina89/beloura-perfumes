@@ -215,15 +215,20 @@ function initHero() {
 /* ====== CTA/Goto categoría ====== */
 function gotoCategoria(cat) {
   categoriaActual = cat;
-  // marcar pestaña y renderizar
+
+  // marcar pestañas
   document.querySelectorAll('.tab').forEach(b => {
-    const active = b.dataset.cat === cat;
-    b.classList.toggle('active', active);
+    b.classList.toggle('active', b.dataset.cat === cat);
   });
+
+  // pintar productos y hacer scroll
   mostrarCategoria(cat);
-  // hacer scroll suave al catálogo
-  document.getElementById('productos-container')?.scrollIntoView({ behavior: 'smooth' });
+  document.getElementById('productos-container')
+    ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+// 👇 esto hace que el onclick del HTML funcione siempre
+window.gotoCategoria = gotoCategoria;
 
 /* Inicia todo (llama también initHero cuando carguen productos) */
 document.addEventListener('DOMContentLoaded', () => {
