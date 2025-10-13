@@ -187,7 +187,7 @@ function renderStockBadge(label, value){
 }
 
 /* ===== Hero ===== */
-const HERO_SLIDES = ['img/hero-1.jpg','img/hero-2.jpg','img/hero-3.jpg'];
+const HERO_SLIDES = ['img/hero-1.jpg','img/hero-2.jpg','img/hero-3.webp'];
 let heroIndex = 0, heroTimer;
 function initHero() {
   const wrap = document.querySelector('.hero');
