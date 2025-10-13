@@ -28,7 +28,7 @@
     {
       "nombre": "Bleu de Chanel",
       "precio": 75,
-      "imagen": "img/perfume-212.jpg",
+      "imagen": "img/bleu.webp",
       "galeria": [
         "img/bleu.jpg"
       ],
@@ -138,7 +138,7 @@
     {
       "nombre": "Smartwatch con Alexa integrado",
       "precio": 30,
-      "imagen": "img/smartwatch.jpg",
+      "imagen": "img/smartwach.jpg",
       "galeria": [
         "img/smart-1.jpg",
         "img/smart-2.jpg",
