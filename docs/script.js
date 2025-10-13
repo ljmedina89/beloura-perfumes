@@ -1,25 +1,26 @@
+/* ===== Estado ===== */
 let productos = {};
 let categoriaActual = 'perfumes';
+const WHATSAPP_NUMBER = '19726070561'; // <-- tu número (sin + ni espacios)
 
-// ⚠️ Tu número WhatsApp en formato internacional, sin "+" ni espacios
-const WHATSAPP_NUMBER = '19726070561';
-
+/* ===== Carga ===== */
 async function cargarProductos() {
   try {
     const resp = await fetch('data/productos.json?v=' + Date.now(), { cache: 'no-store' });
     if (!resp.ok) throw new Error('No se pudo cargar productos.json');
     productos = await resp.json();
     renderTabs();
-    renderDestacados();
     mostrarCategoria(categoriaActual);
+    renderDestacados();
     prepararModal();
   } catch (e) {
     console.error(e);
     const c = document.getElementById('productos-container');
-    c.innerHTML = `<div class="error">⚠️ Error cargando productos. Verifica la ruta data/productos.json</div>`;
+    if (c) c.innerHTML = `<div class="error">⚠️ Error cargando productos. Verifica la ruta data/productos.json</div>`;
   }
 }
 
+/* ===== Tabs / búsqueda ===== */
 function renderTabs() {
   const tabs = document.querySelectorAll('.tab');
   tabs.forEach(btn => {
@@ -31,13 +32,14 @@ function renderTabs() {
       mostrarCategoria(categoriaActual);
     };
   });
-
   const search = document.getElementById('search');
-  search.addEventListener('input', () => mostrarCategoria(categoriaActual, search.value.trim().toLowerCase()));
+  if (search) search.addEventListener('input', () => mostrarCategoria(categoriaActual, search.value.trim().toLowerCase()));
 }
 
+/* ===== Catálogo por categoría ===== */
 function mostrarCategoria(categoria, filtro = '') {
   const contenedor = document.getElementById('productos-container');
+  if (!contenedor) return;
   contenedor.innerHTML = '';
 
   if (!productos[categoria]) {
@@ -57,29 +59,7 @@ function mostrarCategoria(categoria, filtro = '') {
   }
 
   lista.forEach(p => {
-  const card = buildCard(p, categoria);
-  contenedor.appendChild(card);
-});
-
-
-    const card = document.createElement('article');
-    card.className = 'card';
-    card.innerHTML = `
-      <div class="thumb"><img loading="lazy" src="${p.imagen}" alt="${escapeHtml(p.nombre)}"></div>
-      <div class="info">
-        <h3>${escapeHtml(p.nombre)}</h3>
-        <p>${escapeHtml(p.descripcion)}</p>
-        <div class="price">$${num(p.precio)}</div>
-        <div class="card__actions" style="display:flex; gap:8px; justify-content:center;">
-          <button class="btn btn-detalle" data-idx="${idx}" data-cat="${categoria}">Ver detalles</button>
-          <a class="btn" href="${waUrl}" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </div>
-    `;
-    // abrir modal también al hacer click en la imagen o título
-    card.querySelector('.thumb').addEventListener('click', () => openModal(p, categoria));
-    card.querySelector('h3').addEventListener('click', () => openModal(p, categoria));
-    card.querySelector('.btn-detalle').addEventListener('click', () => openModal(p, categoria));
+    const card = buildCard(p, categoria);
     contenedor.appendChild(card);
   });
 }
@@ -88,17 +68,13 @@ function mostrarCategoria(categoria, filtro = '') {
 function renderDestacados(){
   const box = document.getElementById('featured-container');
   if (!box) return;
-  // toma los 2 primeros de cada categoría (si existen)
   const picks = []
     .concat((productos.perfumes||[]).slice(0,2))
     .concat((productos.streaming||[]).slice(0,2))
     .concat((productos.generales||[]).slice(0,2));
-
   box.innerHTML = '';
   picks.forEach(p => box.appendChild(buildCard(p, guessCategoria(p))));
 }
-
-// intenta inferir categoría por presencia en productos
 function guessCategoria(p){
   if ((productos.perfumes||[]).includes(p)) return 'perfumes';
   if ((productos.streaming||[]).includes(p)) return 'streaming';
@@ -106,7 +82,7 @@ function guessCategoria(p){
   return '';
 }
 
-/* Reusa una sola fábrica de tarjetas: con ribbon de stock */
+/* ===== Tarjeta reutilizable ===== */
 function buildCard(p, categoria){
   const waText = `Hola Beloura, me interesa ${p.nombre} (${categoria}). Precio: $${num(p.precio)}.`;
   const waUrl  = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
@@ -114,12 +90,11 @@ function buildCard(p, categoria){
   const card = document.createElement('article');
   card.className = 'card';
   card.style.position = 'relative';
-  const ribbon = stockRibbon(p); // null o elemento
 
   card.innerHTML = `
     <div class="thumb"><img loading="lazy" src="${p.imagen}" alt="${escapeHtml(p.nombre)}"></div>
     <div class="info">
-      <h3>${escapeHtml(p.nombre)}</h3>
+      <h3 style="cursor:pointer">${escapeHtml(p.nombre)}</h3>
       <p>${escapeHtml(p.descripcion || '')}</p>
       <div class="price">$${num(p.precio)}</div>
       <div class="card__actions" style="display:flex; gap:8px; justify-content:center;">
@@ -128,42 +103,32 @@ function buildCard(p, categoria){
       </div>
     </div>
   `;
-  if (ribbon) card.prepend(ribbon);
 
-  // abrir modal con click
-  card.querySelector('.thumb').addEventListener('click', () => openModal(p, categoria));
-  card.querySelector('h3').addEventListener('click', () => openModal(p, categoria));
-  card.querySelector('.btn-detalle').addEventListener('click', () => openModal(p, categoria));
+  card.querySelector('.thumb')?.addEventListener('click', () => openModal(p, categoria));
+  card.querySelector('h3')?.addEventListener('click', () => openModal(p, categoria));
+  card.querySelector('.btn-detalle')?.addEventListener('click', () => openModal(p, categoria));
+  const rb = stockRibbon(p);
+  if (rb) card.prepend(rb);
   return card;
 }
-
 function stockRibbon(p){
   const usa = p.stock?.usa ?? null;
   const ecu = p.stock?.ecuador ?? null;
-  const total = [usa, ecu].filter(v => v!==null && v!==undefined)
-                          .reduce((a,b)=>a+Number(b), 0);
-  if (total === 0) {
-    const r = document.createElement('div');
-    r.className = 'ribbon out'; r.textContent = 'AGOTADO';
-    return r;
-  }
-  if (total > 0 && total <= 2) {
-    const r = document.createElement('div');
-    r.className = 'ribbon'; r.style.background='#f59e0b'; r.textContent = 'ÚLTIMAS UNIDADES';
-    return r;
-  }
-  if (total > 2) {
-    const r = document.createElement('div');
-    r.className = 'ribbon'; r.textContent = 'EN STOCK';
-    return r;
-  }
-  return null;
+  const vals = [usa, ecu].filter(v => v!==null && v!==undefined).map(Number);
+  const total = vals.reduce((a,b)=>a+b,0);
+  if (!vals.length) return null;
+  const r = document.createElement('div');
+  r.className = 'ribbon';
+  if (total <= 0){ r.classList.add('out'); r.textContent = 'AGOTADO'; return r; }
+  if (total <= 2){ r.style.background = '#f59e0b'; r.textContent = 'ÚLTIMAS UNIDADES'; return r; }
+  r.textContent = 'EN STOCK'; return r;
 }
+
 /* ===== Modal ===== */
 let modal, modalImg, modalThumbs, modalTitle, modalDesc, modalPrice, modalSize, modalNotes, modalFeatures, modalStock, modalWa;
-
 function prepararModal(){
   modal = document.getElementById('product-modal');
+  if (!modal) return;
   modalImg = document.getElementById('modal-img');
   modalThumbs = document.getElementById('modal-thumbs');
   modalTitle = document.getElementById('modal-title');
@@ -178,140 +143,41 @@ function prepararModal(){
   modal.addEventListener('click', (e) => {
     if (e.target.dataset.close === 'true') closeModal();
   });
-  /* ====== HERO SLIDER SENCILLO ====== */
-const HERO_SLIDES = [
-  'img/hero-1.jpg',
-  'img/hero-2.jpg',
-  'img/hero-3.webp'
-];
-let heroIndex = 0, heroTimer;
-
-function initHero() {
-  const slide = document.getElementById('hero-slide');
-  const dots = document.getElementById('hero-dots');
-
-  // crear dots
-  dots.innerHTML = HERO_SLIDES.map((_,i)=>`<span class="dot${i===0?' active':''}"></span>`).join('');
-
-  const render = () => {
-    slide.style.backgroundImage = `url('${HERO_SLIDES[heroIndex]}')`;
-    dots.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === heroIndex));
-  };
-
-  // autoplay
-  heroTimer = setInterval(() => {
-    heroIndex = (heroIndex + 1) % HERO_SLIDES.length;
-    render();
-  }, 4000);
-
-  dots.addEventListener('click', (e) => {
-    const idx = [...dots.children].indexOf(e.target);
-    if (idx >= 0) { heroIndex = idx; render(); }
-  });
-
-  render();
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 }
-
-/* ====== CTA/Goto categoría ====== */
-function gotoCategoria(cat) {
-  categoriaActual = cat;
-
-  // marcar pestañas
-  document.querySelectorAll('.tab').forEach(b => {
-    b.classList.toggle('active', b.dataset.cat === cat);
-  });
-
-  // pintar productos y hacer scroll
-  mostrarCategoria(cat);
-  document.getElementById('productos-container')
-    ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-// 👇 esto hace que el onclick del HTML funcione siempre
-window.gotoCategoria = gotoCategoria;
-
-function gotoCategoria(cat) {
-  categoriaActual = cat;
-
-  // marcar pestañas
-  document.querySelectorAll('.tab').forEach(b => {
-    b.classList.toggle('active', b.dataset.cat === cat);
-  });
-
-  // pintar productos y hacer scroll
-  mostrarCategoria(cat);
-  document.getElementById('productos-container')
-    ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-// 👇 esto hace que el onclick del HTML funcione siempre
-window.gotoCategoria = gotoCategoria;
-/* Inicia todo (llama también initHero cuando carguen productos) */
-document.addEventListener('DOMContentLoaded', () => {
-  cargarProductos();
-  initHero();
-});
-
-}
-
 function openModal(p, categoria){
-  // imagen principal
-  modalImg.src = p.imagen;
-  modalImg.alt = p.nombre || '';
-
-  // miniaturas
+  if (!modal) return;
+  modalImg.src = p.imagen; modalImg.alt = p.nombre || '';
   modalThumbs.innerHTML = '';
-  const galeria = Array.isArray(p.galeria) && p.galeria.length ? p.galeria : [p.imagen];
-  galeria.forEach((src, i) => {
-    const t = document.createElement('img');
-    t.src = src; t.alt = (p.nombre || '') + ' ' + (i+1);
-    if (i === 0) t.classList.add('active');
-    t.addEventListener('click', () => {
+  const galeria = Array.isArray(p.galeria)&&p.galeria.length? p.galeria : [p.imagen];
+  galeria.forEach((src,i)=>{
+    const t = document.createElement('img'); t.src = src; t.alt = (p.nombre||'')+' '+(i+1);
+    if (i===0) t.classList.add('active');
+    t.addEventListener('click', ()=>{
       modalImg.src = src;
-      modalThumbs.querySelectorAll('img').forEach(x => x.classList.remove('active'));
+      modalThumbs.querySelectorAll('img').forEach(x=>x.classList.remove('active'));
       t.classList.add('active');
     });
     modalThumbs.appendChild(t);
   });
-
-  // textos
   modalTitle.textContent = p.nombre || '';
   modalDesc.textContent = p.descripcion_larga || p.descripcion || '';
   modalPrice.textContent = `$${num(p.precio)}`;
   modalSize.innerHTML = p.tamano ? `<strong>Tamaño:</strong> ${escapeHtml(p.tamano)}` : '';
-
-  // notas
-  if (Array.isArray(p.notas) && p.notas.length){
-    modalNotes.innerHTML = `<strong>Notas:</strong> ${p.notas.map(escapeHtml).join(', ')}`;
-  } else { modalNotes.innerHTML = ''; }
-
-  // características
-  if (Array.isArray(p.caracteristicas) && p.caracteristicas.length){
-    modalFeatures.innerHTML = `<strong>Características:</strong> <ul style="margin:6px 0 0 18px">${p.caracteristicas.map(c=>`<li>${escapeHtml(c)}</li>`).join('')}</ul>`;
-  } else { modalFeatures.innerHTML = ''; }
-
-  // stock
-  const usa = p.stock?.usa ?? null;
-  const ecu = p.stock?.ecuador ?? null;
+  modalNotes.innerHTML = Array.isArray(p.notas)&&p.notas.length ? `<strong>Notas:</strong> ${p.notas.map(escapeHtml).join(', ')}` : '';
+  modalFeatures.innerHTML = Array.isArray(p.caracteristicas)&&p.caracteristicas.length
+    ? `<strong>Características:</strong> <ul style="margin:6px 0 0 18px">${p.caracteristicas.map(c=>`<li>${escapeHtml(c)}</li>`).join('')}</ul>`
+    : '';
+  const usa = p.stock?.usa ?? null, ecu = p.stock?.ecuador ?? null;
   modalStock.innerHTML = [
     renderStockBadge('EE. UU.', usa),
     renderStockBadge('Ecuador', ecu)
   ].filter(Boolean).join('') || '<span class="badge">Sin info de stock</span>';
-
-  // WhatsApp
   const waText = `Hola Beloura, me interesa ${p.nombre} (${categoria})${p.tamano ? ' - ' + p.tamano : ''}. Precio: $${num(p.precio)}.`;
   modalWa.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
-
-  // mostrar
-  modal.classList.remove('hidden');
-  modal.setAttribute('aria-hidden', 'false');
+  modal.classList.remove('hidden'); modal.setAttribute('aria-hidden','false');
 }
-
-function closeModal(){
-  modal.classList.add('hidden');
-  modal.setAttribute('aria-hidden', 'true');
-}
-
+function closeModal(){ modal?.classList.add('hidden'); modal?.setAttribute('aria-hidden','true'); }
 function renderStockBadge(label, value){
   if (value === null || value === undefined) return '';
   let cls = 'ok', text = `${value} en ${label}`;
@@ -320,12 +186,40 @@ function renderStockBadge(label, value){
   return `<span class="badge ${cls}">${text}</span>`;
 }
 
-/* ===== Utils ===== */
-function escapeHtml(str) {
-  return (str ?? '').toString()
-    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+/* ===== Hero ===== */
+const HERO_SLIDES = ['img/hero-1.jpg','img/hero-2.jpg','img/hero-3.jpg'];
+let heroIndex = 0, heroTimer;
+function initHero() {
+  const wrap = document.querySelector('.hero');
+  const slide = document.getElementById('hero-slide');
+  const dots = document.getElementById('hero-dots');
+  if (!wrap || !slide || !dots || !HERO_SLIDES.length) return;
+  dots.innerHTML = HERO_SLIDES.map((_,i)=>`<span class="dot${i===0?' active':''}"></span>`).join('');
+  const render = () => {
+    slide.style.backgroundImage = `url('${HERO_SLIDES[heroIndex]}')`;
+    dots.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active', i===heroIndex));
+  };
+  heroTimer = setInterval(()=>{ heroIndex = (heroIndex + 1) % HERO_SLIDES.length; render(); }, 4000);
+  dots.addEventListener('click', e => {
+    const idx = [...dots.children].indexOf(e.target);
+    if (idx >= 0) { heroIndex = idx; render(); }
+  });
+  render();
 }
+
+/* ===== Navegación desde home y export ===== */
+function gotoCategoria(cat) {
+  categoriaActual = cat;
+  document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+  mostrarCategoria(cat);
+  const cont = document.getElementById('productos-container');
+  if (cont && cont.scrollIntoView) cont.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+window.gotoCategoria = gotoCategoria;
+
+/* ===== Utils ===== */
+function escapeHtml(str){ return (str ?? '').toString().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;'); }
 function num(n){ return Number(n ?? 0).toFixed(2); }
 
-document.addEventListener('DOMContentLoaded', cargarProductos);
+/* ===== Init ===== */
+document.addEventListener('DOMContentLoaded', () => { cargarProductos(); initHero(); });
