@@ -2,7 +2,7 @@
   "perfumes": [
     {
       "nombre": "Dior Sauvage",
-      "precio": 120,
+      "precio": 95,
       "imagen": "img/sauvage.jpg",
       "galeria": [
         "img/sauvage.jpg",
@@ -21,88 +21,89 @@
       "descripcion": "Aroma intenso y moderno.",
       "descripcion_larga": "Fragancia masculina versátil para uso diario y ocasiones especiales.",
       "stock": {
-        "usa": 5,
+        "usa": 2,
         "ecuador": 2
       }
     },
     {
-      "nombre": "Carolina Herrera 212 Men",
-      "precio": 85,
+      "nombre": "Bleu de Chanel",
+      "precio": 75,
       "imagen": "img/perfume-212.jpg",
       "galeria": [
-        "img/perfume-212.jpg"
+        "img/bleu.jpg"
       ],
       "tamano": "100 ml",
       "notas": [
-        "Lavanda",
-        "Toronja",
-        "Pimienta"
+        "Sándalo",
+        "Toques de cedro",
+        "Haba tonka"
       ],
       "caracteristicas": [
         "Fresco",
-        "Urbano"
+        "Versatil"
       ],
-      "descripcion": "Fragancia clásica masculina de larga duración.",
-      "descripcion_larga": "Clásico moderno, ideal para el día a día.",
+      "descripcion": "fragancia más cálida y sensual. ",
+      "descripcion_larga": "Bleu de Chanel es una fragancia versátil, apta para usar tanto de día como de noche.",
       "stock": {
         "usa": 3,
         "ecuador": 1
       }
     },
     {
-      "nombre": "Versace Eros 100ml",
-      "precio": 95,
+      "nombre": "Valentino's Born in Roma GOLD",
+      "precio": 98,
       "imagen": "img/versace-eros.jpg",
       "galeria": [
-        "img/versace-eros.jpg"
+        "img/gold.jpg"
       ],
       "tamano": "100 ml",
       "notas": [
-        "Menta",
-        "Manzana verde",
+        "Cedro de Virginia",
+        "Ambar",
         "Vainilla"
       ],
       "caracteristicas": [
-        "Dulce fresco",
-        "Muy popular"
+        "Elegante",
+        "Moderno"
       ],
-      "descripcion": "Aroma fresco e intenso.",
-      "descripcion_larga": "Perfecto para salidas nocturnas y clima templado.",
+      "descripcion": "Aroma fresco, intenso y elegante",
+      "descripcion_larga": "Desafía la dualidad, el día y la noche.",
       "stock": {
-        "usa": 4,
+        "usa": 2,
         "ecuador": 0
       }
     },
     {
-      "nombre": "Lattafa Asad",
-      "precio": 38,
-      "imagen": "img/lattafa-asad.jpg",
+      "nombre": "Valentino Born in Roma Intense",
+      "precio": 98,
+      "imagen": "img/rosado.webp",
       "galeria": [
-        "img/lattafa-asad.jpg"
+        "img/rosado-2.webp"
       ],
       "tamano": "100 ml",
       "notas": [
         "Vainilla",
-        "Pimienta",
-        "Ámbar"
+        "Jazmín",
+        "Ámbar",
+        "Benjuí"
       ],
       "caracteristicas": [
         "Excelente desempeño",
         "Gran relación calidad/precio"
       ],
-      "descripcion": "Oriental ambarado, intenso.",
-      "descripcion_larga": "Alternativa económica con gran rendimiento.",
+      "descripcion": "Es una fragancia poderosa y sofisticada, perfecta para destacar. ",
+      "descripcion_larga": "Fragancia floral-ambarina y seductora que intensifica la versión original con notas de vainilla Bourbon cálida y sensual.",
       "stock": {
-        "usa": 7,
-        "ecuador": 5
+        "usa": 5,
+        "ecuador": 1
       }
     }
   ],
   "streaming": [
     {
       "nombre": "Netflix Premium 1 mes",
-      "precio": 6,
-      "imagen": "img/netflix.jpg",
+      "precio": 4,
+      "imagen": "img/netflix.webp",
       "descripcion": "Perfil privado en cuenta compartida (UHD según disponibilidad).",
       "descripcion_larga": "Entrega de credenciales segura. Renovación mensual opcional.",
       "stock": {
@@ -112,8 +113,8 @@
     },
     {
       "nombre": "Disney+ 1 mes",
-      "precio": 5,
-      "imagen": "img/disney.jpg",
+      "precio": 3,
+      "imagen": "img/disney.webp",
       "descripcion": "Catálogo Disney, Marvel, Pixar y Star Wars.",
       "descripcion_larga": "Acceso a todo el contenido de Disney+. Renovación manual o automática.",
       "stock": {
@@ -123,7 +124,7 @@
     },
     {
       "nombre": "Max (HBO) 1 mes",
-      "precio": 6,
+      "precio": 3.50,
       "imagen": "img/max.jpg",
       "descripcion": "Series y películas de Warner/HBO.",
       "descripcion_larga": "Incluye acceso a Max durante 30 días.",
@@ -135,11 +136,14 @@
   ],
   "generales": [
     {
-      "nombre": "Smartwatch Beloura Pro",
-      "precio": 40,
+      "nombre": "Smartwatch con Alexa integrado",
+      "precio": 30,
       "imagen": "img/smartwatch.jpg",
       "galeria": [
-        "img/smartwatch.jpg"
+        "img/smart-1.jpg",
+        "img/smart-2.jpg",
+        "img/smart-3.jpg",
+        "img/smart-4.jpg"
       ],
       "descripcion": "Monitoreo de salud y notificaciones.",
       "descripcion_larga": "Pantalla HD, resistencia al agua IP67, múltiples modos deportivos.",
@@ -147,34 +151,6 @@
         "usa": 6,
         "ecuador": 3
       }
-    },
-    {
-      "nombre": "Audífonos Bluetooth Pro",
-      "precio": 25,
-      "imagen": "img/audifonos.jpg",
-      "galeria": [
-        "img/audifonos.jpg"
-      ],
-      "descripcion": "Alta fidelidad con cancelación de ruido pasiva.",
-      "descripcion_larga": "Estuche con carga rápida, autonomía hasta 24 h.",
-      "stock": {
-        "usa": 12,
-        "ecuador": 8
-      }
-    },
-    {
-      "nombre": "Power Bank 20,000 mAh",
-      "precio": 28,
-      "imagen": "img/powerbank-20k.jpg",
-      "galeria": [
-        "img/powerbank-20k.jpg"
-      ],
-      "descripcion": "Cargador portátil de alta capacidad.",
-      "descripcion_larga": "Salidas USB-A y USB-C, carga rápida 18W.",
-      "stock": {
-        "usa": 10,
-        "ecuador": 4
-      }
     }
-  ]
+]
 }
