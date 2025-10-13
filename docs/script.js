@@ -180,11 +180,19 @@ function openModal(p, categoria){
   modalFeatures.innerHTML = Array.isArray(p.caracteristicas)&&p.caracteristicas.length
     ? `<strong>Características:</strong> <ul style="margin:6px 0 0 18px">${p.caracteristicas.map(c=>`<li>${escapeHtml(c)}</li>`).join('')}</ul>`
     : '';
-  const usa = p.stock?.usa ?? null, ecu = p.stock?.ecuador ?? null;
-  modalStock.innerHTML = [
-    renderStockBadge('EE. UU.', usa),
-    renderStockBadge('Ecuador', ecu)
-  ].filter(Boolean).join('') || '<span class="badge">Sin info de stock</span>';
+  const usa = p.stock?.usa ?? 0;
+  const ecu = p.stock?.ecuador ?? 0;
+  const icon = v => (Number(v) > 0 ? '✅' : '❌');
+
+  modalStock.innerHTML = `
+    <div class="stock-list">
+      <strong>Stock</strong>
+      <ul>
+        <li>${icon(usa)} EE.UU.</li>
+        <li>${icon(ecu)} Ecuador</li>
+      </ul>
+    </div>
+  `;.filter(Boolean).join('') || '<span class="badge">Sin info de stock</span>';
   const waText = `Hola Beloura, me interesa ${p.nombre} (${categoria})${p.tamano ? ' - ' + p.tamano : ''}. Precio: $${num(p.precio)}.`;
   modalWa.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
   modal.classList.remove('hidden'); modal.setAttribute('aria-hidden','false');
