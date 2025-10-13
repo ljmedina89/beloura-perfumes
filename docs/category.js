@@ -1,11 +1,11 @@
-/* Config */
-const WHATSAPP_NUMBER = '19726070561'; // tu número sin + ni espacios
+/* ===== Config ===== */
+const WHATSAPP_NUMBER = '593999999999'; // tu número sin + ni espacios
 const CATS = { perfumes: 'Perfumes', streaming: 'Streaming', generales: 'Productos' };
 
 let productos = {};
 let categoriaActual = null;
 
-/* Utils */
+/* ===== Utils ===== */
 const qs = (s, r=document) => r.querySelector(s);
 const qsa = (s, r=document) => [...r.querySelectorAll(s)];
 const num = n => Number(n ?? 0).toFixed(2);
@@ -13,14 +13,13 @@ const escapeHtml = str => (str ?? '').toString()
  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
  .replace(/"/g,'&quot;').replace(/'/g,'&#039;');
 
-/* URL param */
 function getCatFromURL(){
   const p = new URLSearchParams(location.search);
   const cat = p.get('cat') || 'perfumes';
   return CATS[cat] ? cat : 'perfumes';
 }
 
-/* Modal refs */
+/* ===== Modal refs ===== */
 let modal, modalImg, modalThumbs, modalTitle, modalDesc, modalPrice, modalSize, modalNotes, modalFeatures, modalStock, modalWa;
 
 function prepararModal(){
@@ -39,6 +38,7 @@ function prepararModal(){
   modal.addEventListener('click', e => { if (e.target.dataset.close === 'true') closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 }
+
 function openModal(p){
   modalImg.src = p.imagen; modalImg.alt = p.nombre || '';
   modalThumbs.innerHTML = '';
@@ -53,6 +53,7 @@ function openModal(p){
     });
     modalThumbs.appendChild(t);
   });
+
   modalTitle.textContent = p.nombre || '';
   modalDesc.textContent = p.descripcion_larga || p.descripcion || '';
   modalPrice.textContent = `$${num(p.precio)}`;
@@ -60,11 +61,11 @@ function openModal(p){
   modalNotes.innerHTML = Array.isArray(p.notas)&&p.notas.length ? `<strong>Notas:</strong> ${p.notas.map(escapeHtml).join(', ')}` : '';
   modalFeatures.innerHTML = Array.isArray(p.caracteristicas)&&p.caracteristicas.length
     ? `<strong>Características:</strong> <ul style="margin:6px 0 0 18px">${p.caracteristicas.map(c=>`<li>${escapeHtml(c)}</li>`).join('')}</ul>` : '';
+
+  // ✅/❌ stock simple
   const usa = p.stock?.usa ?? 0;
   const ecu = p.stock?.ecuador ?? 0;
-
   const icon = v => (Number(v) > 0 ? '✅' : '❌');
-
   modalStock.innerHTML = `
     <div class="stock-list">
       <strong>Stock</strong>
@@ -73,26 +74,21 @@ function openModal(p){
         <li>${icon(ecu)} Ecuador</li>
       </ul>
     </div>
-  `;.filter(Boolean).join('') || '<span class="badge">Sin info de stock</span>';
+  `;
+
   const waText = `Hola Beloura, me interesa ${p.nombre} (${CATS[categoriaActual]})${p.tamano ? ' - ' + p.tamano : ''}. Precio: $${num(p.precio)}.`;
   modalWa.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
+
   modal.classList.remove('hidden'); modal.setAttribute('aria-hidden','false');
 }
 function closeModal(){ modal.classList.add('hidden'); modal.setAttribute('aria-hidden','true'); }
-function renderStockBadge(label, value){
-  if (value === null || value === undefined) return '';
-  let cls='ok', text=`${value} en ${label}`;
-  if (Number(value)<=0){ cls='out'; text=`Agotado en ${label}`; }
-  else if (Number(value)<=2){ cls='low'; }
-  return `<span class="badge ${cls}">${text}</span>`;
-}
 
-/* Pintar categoría */
+/* ===== Cards y pintado ===== */
 function buildCard(p){
   const waText = `Hola Beloura, me interesa ${p.nombre} (${CATS[categoriaActual]}). Precio: $${num(p.precio)}.`;
   const waUrl  = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
   const card = document.createElement('article');
-  card.className = 'card'; card.style.position = 'relative';
+  card.className = 'card';
   card.innerHTML = `
     <div class="thumb"><img loading="lazy" src="${p.imagen}" alt="${escapeHtml(p.nombre)}"></div>
     <div class="info">
@@ -108,19 +104,9 @@ function buildCard(p){
   card.querySelector('.thumb').addEventListener('click', ()=>openModal(p));
   card.querySelector('h3').addEventListener('click', ()=>openModal(p));
   card.querySelector('.btn-detalle').addEventListener('click', ()=>openModal(p));
-  const rb = stockRibbon(p); if (rb) card.prepend(rb);
   return card;
 }
-function stockRibbon(p){
-  const usa = p.stock?.usa ?? null, ecu = p.stock?.ecuador ?? null;
-  const vals = [usa, ecu].filter(v => v!==null && v!==undefined).map(Number);
-  const total = vals.reduce((a,b)=>a+b,0);
-  if (!vals.length) return null;
-  const r = document.createElement('div'); r.className = 'ribbon';
-  if (total<=0){ r.classList.add('out'); r.textContent = 'AGOTADO'; return r; }
-  if (total<=2){ r.style.background='#f59e0b'; r.textContent = 'ÚLTIMAS UNIDADES'; return r; }
-  r.textContent = 'EN STOCK'; return r;
-}
+
 function pintarCategoria(filtro=''){
   const cont = qs('#productos-container');
   const items = productos[categoriaActual] || [];
@@ -133,14 +119,14 @@ function pintarCategoria(filtro=''){
   lista.forEach(p => cont.appendChild(buildCard(p)));
 }
 
-/* Tabs visuales + búsqueda */
+/* ===== Tabs visuales + búsqueda ===== */
 function syncTabs(){
   qsa('.tab').forEach(el => el.classList.toggle('active', el.dataset.cat===categoriaActual));
   qs('#cat-title').textContent = `Beloura • ${CATS[categoriaActual]}`;
   qs('#crumb-cat').textContent = CATS[categoriaActual];
 }
 
-/* Boot */
+/* ===== Boot ===== */
 document.addEventListener('DOMContentLoaded', async () => {
   categoriaActual = getCatFromURL();
   prepararModal();
