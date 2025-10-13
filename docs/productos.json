@@ -1,0 +1,180 @@
+{
+  "perfumes": [
+    {
+      "nombre": "Dior Sauvage",
+      "precio": 120,
+      "imagen": "img/sauvage.jpg",
+      "galeria": [
+        "img/sauvage.jpg",
+        "img/sauvage-2.jpg"
+      ],
+      "tamano": "100 ml",
+      "notas": [
+        "Bergamota",
+        "Pimienta",
+        "Ambroxan"
+      ],
+      "caracteristicas": [
+        "Alta proyección",
+        "Larga duración"
+      ],
+      "descripcion": "Aroma intenso y moderno.",
+      "descripcion_larga": "Fragancia masculina versátil para uso diario y ocasiones especiales.",
+      "stock": {
+        "usa": 5,
+        "ecuador": 2
+      }
+    },
+    {
+      "nombre": "Carolina Herrera 212 Men",
+      "precio": 85,
+      "imagen": "img/perfume-212.jpg",
+      "galeria": [
+        "img/perfume-212.jpg"
+      ],
+      "tamano": "100 ml",
+      "notas": [
+        "Lavanda",
+        "Toronja",
+        "Pimienta"
+      ],
+      "caracteristicas": [
+        "Fresco",
+        "Urbano"
+      ],
+      "descripcion": "Fragancia clásica masculina de larga duración.",
+      "descripcion_larga": "Clásico moderno, ideal para el día a día.",
+      "stock": {
+        "usa": 3,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "Versace Eros 100ml",
+      "precio": 95,
+      "imagen": "img/versace-eros.jpg",
+      "galeria": [
+        "img/versace-eros.jpg"
+      ],
+      "tamano": "100 ml",
+      "notas": [
+        "Menta",
+        "Manzana verde",
+        "Vainilla"
+      ],
+      "caracteristicas": [
+        "Dulce fresco",
+        "Muy popular"
+      ],
+      "descripcion": "Aroma fresco e intenso.",
+      "descripcion_larga": "Perfecto para salidas nocturnas y clima templado.",
+      "stock": {
+        "usa": 4,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "Lattafa Asad",
+      "precio": 38,
+      "imagen": "img/lattafa-asad.jpg",
+      "galeria": [
+        "img/lattafa-asad.jpg"
+      ],
+      "tamano": "100 ml",
+      "notas": [
+        "Vainilla",
+        "Pimienta",
+        "Ámbar"
+      ],
+      "caracteristicas": [
+        "Excelente desempeño",
+        "Gran relación calidad/precio"
+      ],
+      "descripcion": "Oriental ambarado, intenso.",
+      "descripcion_larga": "Alternativa económica con gran rendimiento.",
+      "stock": {
+        "usa": 7,
+        "ecuador": 5
+      }
+    }
+  ],
+  "streaming": [
+    {
+      "nombre": "Netflix Premium 1 mes",
+      "precio": 6,
+      "imagen": "img/netflix.jpg",
+      "descripcion": "Perfil privado en cuenta compartida (UHD según disponibilidad).",
+      "descripcion_larga": "Entrega de credenciales segura. Renovación mensual opcional.",
+      "stock": {
+        "usa": 50,
+        "ecuador": 50
+      }
+    },
+    {
+      "nombre": "Disney+ 1 mes",
+      "precio": 5,
+      "imagen": "img/disney.jpg",
+      "descripcion": "Catálogo Disney, Marvel, Pixar y Star Wars.",
+      "descripcion_larga": "Acceso a todo el contenido de Disney+. Renovación manual o automática.",
+      "stock": {
+        "usa": 50,
+        "ecuador": 50
+      }
+    },
+    {
+      "nombre": "Max (HBO) 1 mes",
+      "precio": 6,
+      "imagen": "img/max.jpg",
+      "descripcion": "Series y películas de Warner/HBO.",
+      "descripcion_larga": "Incluye acceso a Max durante 30 días.",
+      "stock": {
+        "usa": 30,
+        "ecuador": 30
+      }
+    }
+  ],
+  "generales": [
+    {
+      "nombre": "Smartwatch Beloura Pro",
+      "precio": 40,
+      "imagen": "img/smartwatch.jpg",
+      "galeria": [
+        "img/smartwatch.jpg"
+      ],
+      "descripcion": "Monitoreo de salud y notificaciones.",
+      "descripcion_larga": "Pantalla HD, resistencia al agua IP67, múltiples modos deportivos.",
+      "stock": {
+        "usa": 6,
+        "ecuador": 3
+      }
+    },
+    {
+      "nombre": "Audífonos Bluetooth Pro",
+      "precio": 25,
+      "imagen": "img/audifonos.jpg",
+      "galeria": [
+        "img/audifonos.jpg"
+      ],
+      "descripcion": "Alta fidelidad con cancelación de ruido pasiva.",
+      "descripcion_larga": "Estuche con carga rápida, autonomía hasta 24 h.",
+      "stock": {
+        "usa": 12,
+        "ecuador": 8
+      }
+    },
+    {
+      "nombre": "Power Bank 20,000 mAh",
+      "precio": 28,
+      "imagen": "img/powerbank-20k.jpg",
+      "galeria": [
+        "img/powerbank-20k.jpg"
+      ],
+      "descripcion": "Cargador portátil de alta capacidad.",
+      "descripcion_larga": "Salidas USB-A y USB-C, carga rápida 18W.",
+      "stock": {
+        "usa": 10,
+        "ecuador": 4
+      }
+    }
+  ]
+}
