@@ -101,6 +101,58 @@
         "usa": 5,
         "ecuador": 1
       }
+    },
+       {
+      "nombre": "Jean Paul Gaultier Elixir Le Male",
+      "precio": 90,
+      "imagen": "img/jean-1.jpg",
+      "destacado": true,
+      "galeria": [
+        "img/jean-2.webp"
+      ],
+      "tamano": "125 ml",
+      "notas": [
+        "Lavanda",
+        "Menta",
+        "Vainilla",
+        "Sandalo"
+      ],
+      "caracteristicas": [
+        "Excelente desempeño",
+        "Gran relación calidad/precio"
+      ],
+      "descripcion": "Una versión intensa y oriental amaderada del clásico Le Male, caracterizada por su elegancia y fuerza. ",
+      "descripcion_larga": "Clásico y oriental, lanzado en 1995 por Francis Kurkdjian. A menudo se describe como un aroma chic, lúdico y moderno.",
+      "stock": {
+        "usa": 2,
+        "ecuador": 0
+      }
+    },
+     {
+      "nombre": "Black Opium de Yves Saint Laurent ",
+      "precio": 95,
+      "imagen": "img/opium-1.webp",
+      "destacado": true,
+      "galeria": [
+        "img/opium-2.jpg"
+      ],
+      "tamano": "90 ml",
+      "notas": [
+        "Café",
+        "Jazmín sambac",
+        "Almendra amarga",
+        "Regaliz"
+      ],
+      "caracteristicas": [
+        "Excelente desempeño",
+        "Gran relación calidad/precio"
+      ],
+      "descripcion": "Combina un acorde de café vibrante y energizante con la dulzura de la vainilla y la feminidad de las flores blancas.",
+      "descripcion_larga": "fragancia femenina dulce, sensual y adictiva, caracterizada por ser el primer perfume floral de café. ",
+      "stock": {
+        "usa": 2,
+        "ecuador": 0
+      }
     }
   ],
   "streaming": [
