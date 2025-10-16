@@ -246,6 +246,17 @@
         "usa": 30,
         "ecuador": 30
       }
+    },
+    {
+      "nombre": "Free Fire (Diamantes)",
+      "precio": 1.25,
+      "imagen": "img/free-1.jpg",
+      "descripcion": "Recarga de Diamantes",
+      "descripcion_larga": "Juega y recarga sin limites, y se el mejor",
+      "stock": {
+        "usa": 30,
+        "ecuador": 30
+      }
     }
   ],
   "generales": [
