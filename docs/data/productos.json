@@ -237,6 +237,17 @@
       }
     },
     {
+      "nombre": "PORN HUB",
+      "precio": 6,
+      "imagen": "img/porn.png",
+      "descripcion": "Contenido Prmeium XXX",
+      "descripcion_larga": "Incluye acceso a Porn Hub durante 30 días.",
+      "stock": {
+        "usa": 30,
+        "ecuador": 30
+      }
+    },
+    {
       "nombre": "Canva Pro",
       "precio": 5,
       "imagen": "img/canva-1.png",
