@@ -224,6 +224,17 @@
         "usa": 30,
         "ecuador": 30
       }
+    },
+     {
+      "nombre": "Youtube Premium",
+      "precio": 3.00,
+      "imagen": "img/you-1.webp",
+      "descripcion": "Disfruta sin anuncios",
+      "descripcion_larga": "Incluye acceso a reproduccion en segundo plano.",
+      "stock": {
+        "usa": 30,
+        "ecuador": 30
+      }
     }
   ],
   "generales": [
