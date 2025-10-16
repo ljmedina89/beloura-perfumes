@@ -204,6 +204,17 @@
       }
     },
     {
+      "nombre": "FLUJO TV",
+      "precio": 9,
+      "imagen": "img/flujo.png",
+      "descripcion": "Cuenta completa de 3 perfiles",
+      "descripcion_larga": "+1000 Canales en vivo de todo el mundo, Series y peliculas de estreno",
+      "stock": {
+        "usa": 50,
+        "ecuador": 50
+      }
+    },
+    {
       "nombre": "Max (HBO) 1 mes",
       "precio": 3.50,
       "imagen": "img/hbo.webp",
