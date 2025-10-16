@@ -153,6 +153,31 @@
         "usa": 2,
         "ecuador": 0
       }
+    },
+    {
+      "nombre": "ODYSSEY MANDARIN SKY ",
+      "precio": 40,
+      "imagen": "img/mandarin.webp",
+      "destacado": true,
+      "galeria": [
+        "img/mandarin-2.jpg"
+      ],
+      "tamano": "100 ml",
+      "notas": [
+        "Mandarina",
+        "Naranja",
+        "azafrán y salvia"
+      ],
+      "caracteristicas": [
+        "Excelente desempeño",
+        "Gran relación calidad/precio"
+      ],
+      "descripcion": "Es una fragancia de la familia olfativa para Hombres, Estilo Moderno, vibrante y sofisticado.",
+      "descripcion_larga": "Muchos coinciden en que es un perfume dulce, similar a otros perfumes con notas de caramelo como Scandal Pour Homme.",
+      "stock": {
+        "usa": 6,
+        "ecuador": 6
+      }
     }
   ],
   "streaming": [
@@ -184,6 +209,17 @@
       "imagen": "img/hbo.webp",
       "descripcion": "Series y películas de Warner/HBO.",
       "descripcion_larga": "Incluye acceso a Max durante 30 días.",
+      "stock": {
+        "usa": 30,
+        "ecuador": 30
+      }
+    },
+     {
+      "nombre": "PRIME VIDEO 1 mes",
+      "precio": 3.50,
+      "imagen": "img/prime-1.png",
+      "descripcion": "Series y películas exclusivas de Amazon.",
+      "descripcion_larga": "Incluye acceso a Prime Video durante 30 días.",
       "stock": {
         "usa": 30,
         "ecuador": 30
