@@ -1,5 +1,5 @@
 /* ===== Config ===== */
-const WHATSAPP_NUMBER = '593999999999'; // tu número sin + ni espacios
+const WHATSAPP_NUMBER = '+18176228895'; // tu número sin + ni espacios
 const CATS = { perfumes: 'Perfumes', streaming: 'Streaming', generales: 'Productos' };
 
 let productos = {};
