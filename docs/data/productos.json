@@ -299,19 +299,5 @@
         "ecuador": 3
       }
     },
-    {
-      "nombre": "Camiseta TOMMY HILFIGER",
-      "precio": 25, 
-      "imagen": "img/tommytrq.jpeg",
-      "galeria": [
-        "img/tommytrq.jpeg"
-      ],
-      "descripcion": "Camiseta coello redondo",
-      "descripcion_larga": "Camiseta coello redondo TOMMY HILFIGER",
-      "stock": {
-        "usa": 0,
-        "ecuador": 1
-      }
-    }
-]
+    ]
 }
