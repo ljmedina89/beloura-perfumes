@@ -302,7 +302,6 @@
     {
       "nombre": "Camiseta TOMMY HILFIGER",
       "precio": 25, 
-      "talla": XL,
       "imagen": "img/tommytrq.jpeg",
       "galeria": [
         "img/tommytrq.jpeg"
