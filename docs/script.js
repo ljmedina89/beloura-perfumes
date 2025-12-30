@@ -192,7 +192,7 @@ function openModal(p, categoria){
         <li>${icon(ecu)} Ecuador</li>
       </ul>
     </div>
-  ;.filter(Boolean).join('') || '<span class="badge">Sin info de stock</span>';
+ `; filter(Boolean).join('') || '<span class="badge">Sin info de stock</span>';
   const waText = `Hola Beloura, me interesa ${p.nombre} (${categoria})${p.tamano ? ' - ' + p.tamano : ''}. Precio: $${num(p.precio)}.`;
   modalWa.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
   modal.classList.remove('hidden'); modal.setAttribute('aria-hidden','false');
