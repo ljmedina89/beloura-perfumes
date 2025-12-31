@@ -72,13 +72,13 @@ function renderDestacados(){
   // 1) Toma explícitamente los marcados como destacado
   const marked = []
     .concat((productos.perfumes||[]).filter(p => p.destacado))
-    .concat((productos.ropa||[]).filter(p => p.destacado))
+    .concat((productos.Ropa||[]).filter(p => p.destacado))
     .concat((productos.generales||[]).filter(p => p.destacado));
 
   // 2) Si no hay marcados, toma 2 de cada categoría como fallback
   const fallback = []
     .concat((productos.perfumes||[]).slice(0,2))
-    .concat((productos.ropa||[]).slice(0,2))
+    .concat((productos.Ropa||[]).slice(0,2))
     .concat((productos.generales||[]).slice(0,2));
 
   const picks = marked.length ? marked : fallback;
@@ -89,7 +89,7 @@ function renderDestacados(){
 
 function guessCategoria(p){
   if ((productos.perfumes||[]).includes(p)) return 'perfumes';
-  if ((productos.ropa||[]).includes(p)) return 'ropa';
+  if ((productos.Ropa||[]).includes(p)) return 'Ropa';
   if ((productos.generales||[]).includes(p)) return 'generales';
   return '';
 }
