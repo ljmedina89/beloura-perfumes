@@ -268,7 +268,62 @@
         "usa": 0,
         "ecuador": 1
       }
-    } 
+    } ,
+    {
+      "nombre": "T-Shirts",
+      "precio": 22,
+      "imagen": "img/11.png",
+      "descripcion": "ADIDAS",
+      "descripcion_larga": "Marca: Adidas, Talla: M",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      },
+    }  ,
+    {
+      "nombre": "T-Shirts",
+      "precio": 22,
+      "imagen": "img/12.png",
+      "descripcion": "REEBOK",
+      "descripcion_larga": "Marca: Reebok, Talla: M",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      },
+    }  ,
+    {
+      "nombre": "T-Shirts",
+      "precio": 22,
+      "imagen": "img/13.png",
+      "descripcion": "PUMA",
+      "descripcion_larga": "Marca: Puma, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      },
+    } ,
+    {
+      "nombre": "T-Shirts",
+      "precio": 22,
+      "imagen": "img/14.png",
+      "descripcion": "ADIDAS",
+      "descripcion_larga": "Marca: Adidas, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      },
+    } ,
+    {
+      "nombre": "T-Shirts",
+      "precio": 22,
+      "imagen": "img/16.png",
+      "descripcion": "REEBOK",
+      "descripcion_larga": "Marca: Reebok, Talla: M",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      },
+    }  ,
     ],
   "generales": [
     {
