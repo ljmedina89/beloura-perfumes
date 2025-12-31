@@ -184,7 +184,7 @@
     {
       "nombre": "Pantaloneta",
       "precio": 25,
-      "imagen": "img/tec-1",
+      "imagen": "img/tec-1.jpg",
       "marca": "TEC-ONE",
       "descripcion_larga": "Entrega inmediata",
       "stock": {
