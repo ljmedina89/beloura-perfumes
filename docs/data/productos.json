@@ -182,11 +182,66 @@
   ],
   "Ropa": [
     {
-      "nombre": "Pantaloneta",
+      "nombre": "Shorts",
       "precio": 25,
       "imagen": "img/tec-1.jpg",
       "descripcion": "TEC-ONE",
       "descripcion_larga": "Marca: Tec One, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    }  ,
+    {
+      "nombre": "Shorts",
+      "precio": 22,
+      "imagen": "img/beige.png",
+      "descripcion": "TEC-ONE",
+      "descripcion_larga": "Marca: Tec One, Talla: M",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    }  ,
+    {
+      "nombre": "Shorts",
+      "precio": 25,
+      "imagen": "img/azul.png",
+      "descripcion": "TEC-ONE",
+      "descripcion_larga": "Marca: Tec One, Talla: XL",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    }  ,
+    {
+      "nombre": "Shorts",
+      "precio": 25,
+      "imagen": "img/turqueza.png",
+      "descripcion": "TEC-ONE",
+      "descripcion_larga": "Marca: Tec One, Talla: XL",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    }  ,
+    {
+      "nombre": "Shorts",
+      "precio": 22,
+      "imagen": "img/tec-2.png",
+      "descripcion": "TEC-ONE",
+      "descripcion_larga": "Marca: Tec One, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    }  ,
+    {
+      "nombre": "Shorts",
+      "precio": 25,
+      "imagen": "img/morado.png",
+      "descripcion": "NIKE",
+      "descripcion_larga": "Marca: Nike, Talla: L",
       "stock": {
         "usa": 0,
         "ecuador": 1
