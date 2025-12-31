@@ -186,7 +186,7 @@
       "precio": 25,
       "imagen": "img/tec-1.jpg",
       "descripcion": "TEC-ONE",
-      "descripcion_larga": "Entrega inmediata",
+      "descripcion_larga": "Marca: Tec One, Talla: L",
       "stock": {
         "usa": 0,
         "ecuador": 1
