@@ -180,19 +180,23 @@ function openModal(p, categoria){
   modalFeatures.innerHTML = Array.isArray(p.caracteristicas)&&p.caracteristicas.length
     ? `<strong>Características:</strong> <ul style="margin:6px 0 0 18px">${p.caracteristicas.map(c=>`<li>${escapeHtml(c)}</li>`).join('')}</ul>`
     : '';
-  const usa = p.stock?.usa ?? 0;
-  const ecu = p.stock?.ecuador ?? 0;
+  const usa = p.stock?.usa ?? null;
+  const ecu = p.stock?.ecuador ?? null;
   const icon = v => (Number(v) > 0 ? '✅' : '❌');
 
-  modalStock.innerHTML = `
-    <div class="stock-list">
-      <strong>Stock</strong>
-      <ul>
-        <li>${icon(usa)} EE.UU.</li>
-        <li>${icon(ecu)} Ecuador</li>
-      </ul>
-    </div>
- `;.filter(Boolean).join('') || '<span class="badge">Sin info de stock</span>';
+  if (usa === null && ecu === null) {
+    modalStock.innerHTML = '<span class="badge">Sin info de stock</span>';
+  } else {
+    modalStock.innerHTML = `
+      <div class="stock-list">
+        <strong>Stock</strong>
+        <ul>
+          <li>${icon(usa)} EE.UU. ${usa !== null ? `(${usa})` : ''}</li>
+          <li>${icon(ecu)} Ecuador ${ecu !== null ? `(${ecu})` : ''}</li>
+        </ul>
+      </div>
+    `;
+  }.filter(Boolean).join('') || '<span class="badge">Sin info de stock</span>';
   const waText = `Hola Beloura, me interesa ${p.nombre} (${categoria})${p.tamano ? ' - ' + p.tamano : ''}. Precio: $${num(p.precio)}.`;
   modalWa.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
   modal.classList.remove('hidden'); modal.setAttribute('aria-hidden','false');
@@ -256,5 +260,4 @@ document.addEventListener('DOMContentLoaded', () => {
 function escapeHtml(str){ return (str ?? '').toString().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;'); }
 function num(n){ return Number(n ?? 0).toFixed(2); }
 
-/* ===== Init ===== */
-document.addEventListener('DOMContentLoaded', () => { cargarProductos(); initHero(); });
+
