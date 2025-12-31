@@ -195,7 +195,7 @@
     {
       "nombre": "Pantaloneta",
       "precio": 28,
-      "imagen": "img/nike-1.jpg",
+      "imagen": "img/nike-1.png",
       "descripcion": "NIKE",
       "descripcion_larga": "Marca: Nike, Talla: L",
       "stock": {
