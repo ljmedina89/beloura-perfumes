@@ -191,7 +191,18 @@
         "usa": 0,
         "ecuador": 1
       }
-    }    
+    }  ,
+    {
+      "nombre": "Pantaloneta",
+      "precio": 28,
+      "imagen": "img/nike-1.jpg",
+      "descripcion": "NIKE",
+      "descripcion_larga": "Marca: Nike, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    } 
     ],
   "generales": [
     {
