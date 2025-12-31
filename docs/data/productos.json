@@ -182,14 +182,14 @@
   ],
   "ropa": [
     {
-      "nombre": "Netflix Premium 1 mes",
-      "precio": 4,
-      "imagen": "img/netflix.webp",
-      "descripcion": "Perfil privado en cuenta compartida (UHD según disponibilidad).",
-      "descripcion_larga": "Entrega de credenciales segura. Renovación mensual opcional.",
+      "nombre": "Pantaloneta",
+      "precio": 25,
+      "imagen": "img/tec-1",
+      "marca": "TEC-ONE",
+      "descripcion_larga": "Entrega inmediata",
       "stock": {
-        "usa": 50,
-        "ecuador": 50
+        "usa": 0,
+        "ecuador": 1
       }
     },
     {
