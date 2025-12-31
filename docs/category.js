@@ -1,6 +1,6 @@
 /* ===== Config ===== */
 const WHATSAPP_NUMBER = '+18176228895'; // tu número sin + ni espacios
-const CATS = { perfumes: 'Perfumes', ropa: 'ropa', generales: 'Productos' };
+const CATS = { perfumes: 'Perfumes', Ropa: 'Ropa', generales: 'Productos' };
 
 let productos = {};
 let categoriaActual = null;
