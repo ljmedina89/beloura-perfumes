@@ -259,7 +259,7 @@
       }
     }  ,
     {
-      "nombre": "Pantaloneta",
+      "nombre": "Shorts",
       "precio": 28,
       "imagen": "img/nike-1.png",
       "descripcion": "NIKE",
@@ -323,7 +323,128 @@
         "usa": 0,
         "ecuador": 1
       }
-    }  
+    }  ,
+    {
+      "nombre": "T-Shirts",
+      "precio": 22,
+      "imagen": "img/17.png",
+      "descripcion": "ADIDAS",
+      "descripcion_larga": "Marca: Adidas, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    }  ,
+    {
+      "nombre": "T-Shirts",
+      "precio": 22,
+      "imagen": "img/18.png",
+      "descripcion": "REEBOK",
+      "descripcion_larga": "Marca: Reebok, Talla: M",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    } ,
+    {
+      "nombre": "T-Shirts",
+      "precio": 22,
+      "imagen": "img/19.png",
+      "descripcion": "REEBOK",
+      "descripcion_larga": "Marca: Reebok, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    } ,
+    {
+      "nombre": "T-Shirts",
+      "precio": 22,
+      "imagen": "img/20.png",
+      "descripcion": "REEBOK",
+      "descripcion_larga": "Marca: Reebok, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    } ,
+    {
+      "nombre": "POLO",
+      "precio": 45,
+      "imagen": "img/21.png",
+      "descripcion": "NAUTICA",
+      "descripcion_larga": "Marca: Nautica, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    } ,
+    {
+      "nombre": "CAMISA",
+      "precio": 28,
+      "imagen": "img/22.png",
+      "descripcion": "IZOD",
+      "descripcion_larga": "Marca: IZOD, Talla: M",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "CAMISA",
+      "precio": 28,
+      "imagen": "img/23.png",
+      "descripcion": "IZOD",
+      "descripcion_larga": "Marca: IZOD, Talla: S",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "POLO",
+      "precio": 45,
+      "imagen": "img/24.png",
+      "descripcion": "TOMMY HILFIGER",
+      "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: XL",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "POLO",
+      "precio": 45,
+      "imagen": "img/25.png",
+      "descripcion": "CALVIN KLEIN",
+      "descripcion_larga": "Marca: CALVIN KLEIN, Talla: M",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+     {
+      "nombre": "POLO",
+      "precio": 35,
+      "imagen": "img/26.png",
+      "descripcion": "TOMMY HILFIGER",
+      "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: XL",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "POLO",
+      "precio": 25,
+      "imagen": "img/27.png",
+      "descripcion": "NAUTICA",
+      "descripcion_larga": "Marca: NAUTICA, Talla: XL",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    }
     ],
   "generales": [
     {
