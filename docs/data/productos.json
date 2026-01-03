@@ -733,7 +733,7 @@
     },
      {
       "nombre": "CAP",
-      "precio": 25,
+      "precio": 22,
       "imagen": "img/54.png",
       "descripcion": "LEE",
       "descripcion_larga": "Marca: LEE, Talla: UNIQUE",
@@ -843,7 +843,7 @@
     },
     {
       "nombre": "CAP",
-      "precio": 25,
+      "precio": 22,
       "imagen": "img/64.png",
       "descripcion": "LEE",
       "descripcion_larga": "Marca: LEE, Talla: UNIQUE",
