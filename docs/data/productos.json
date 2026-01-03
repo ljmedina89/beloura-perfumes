@@ -567,11 +567,330 @@
       }
     },
     {
-      "nombre": "POLO",
-      "precio": 48,
+      "nombre": "T-SHIRTS",
+      "precio": 32,
       "imagen": "img/39.png",
+      "descripcion": "BUFFALO",
+      "descripcion_larga": "Marca: BUFFALO, Talla: XL",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+       {
+      "nombre": "T-SHIRTS",
+      "precio": 32,
+      "imagen": "img/40.png",
+      "descripcion": "NIKE",
+      "descripcion_larga": "Marca: NIKE, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+        {
+      "nombre": "SWEATER",
+      "precio": 54,
+      "imagen": "img/41.png",
       "descripcion": "CALVIN KLEIN",
       "descripcion_larga": "Marca: CALVIN KLEIN, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+      {
+      "nombre": "T-SHIRTS",
+      "precio": 30,
+      "imagen": "img/42.png",
+      "descripcion": "CALVIN KLEIN",
+      "descripcion_larga": "Marca: CALVIN KLEIN, Talla: M",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+     {
+      "nombre": "T-SHIRTS",
+      "precio": 30,
+      "imagen": "img/43.png",
+      "descripcion": "TOMMY HILFIGER",
+      "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: M",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+     {
+      "nombre": "SWEATER",
+      "precio": 25,
+      "imagen": "img/44.png",
+      "descripcion": "NIKE",
+      "descripcion_larga": "Marca: NIKE, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+     {
+      "nombre": "T-SHIRTS",
+      "precio": 27,
+      "imagen": "img/45.png",
+      "descripcion": "TRUE RELIGION",
+      "descripcion_larga": "Marca: TRUE RELIGION, Talla: XL",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+      {
+      "nombre": "T-SHIRTS",
+      "precio": 22,
+      "imagen": "img/46.png",
+      "descripcion": "REEBOK",
+      "descripcion_larga": "Marca: REEBOK, Talla: M",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "T-SHIRTS",
+      "precio": 20,
+      "imagen": "img/47.png",
+      "descripcion": "REEBOK",
+      "descripcion_larga": "Marca: REEBOK, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+     {
+      "nombre": "T-SHIRTS",
+      "precio": 30,
+      "imagen": "img/48.png",
+      "descripcion": "ALL STAR",
+      "descripcion_larga": "Marca: ALL STAR, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+     {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/49.png",
+      "descripcion": "ADIDAS",
+      "descripcion_larga": "Marca: ADIDAS, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+     {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/50.png",
+      "descripcion": "COLUMBIA",
+      "descripcion_larga": "Marca: COLUMBIA, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/51.png",
+      "descripcion": "COLUMBIA",
+      "descripcion_larga": "Marca: COLUMBIA, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+     {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/52.png",
+      "descripcion": "ADIDAS",
+      "descripcion_larga": "Marca: ADIDAS, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/53.png",
+      "descripcion": "COLUMBIA",
+      "descripcion_larga": "Marca: COLUMBIA, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+     {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/54.png",
+      "descripcion": "LEE",
+      "descripcion_larga": "Marca: LEE, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/55.png",
+      "descripcion": "NIKE",
+      "descripcion_larga": "Marca: NIKE, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/56.png",
+      "descripcion": "NIKE",
+      "descripcion_larga": "Marca: NIKE, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/57.png",
+      "descripcion": "ADIDAS",
+      "descripcion_larga": "Marca: ADIDAS, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/58.png",
+      "descripcion": "COLUMBIA",
+      "descripcion_larga": "Marca: COLUMBIA, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "Men's Sandals",
+      "precio": 30,
+      "imagen": "img/59.png",
+      "descripcion": "NEW BALANCE",
+      "descripcion_larga": "Marca: NEW BALANCE, Talla: 8",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/60.png",
+      "descripcion": "NIKE",
+      "descripcion_larga": "Marca: NIKE, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "CAP",
+      "precio": 28,
+      "imagen": "img/61.png",
+      "descripcion": "BULLS",
+      "descripcion_larga": "Marca: BULLS, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/62.png",
+      "descripcion": "NIKE",
+      "descripcion_larga": "Marca: NIKE, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "CAP",
+      "precio": 28,
+      "imagen": "img/63.png",
+      "descripcion": "BULLS",
+      "descripcion_larga": "Marca: BULLS, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/64.png",
+      "descripcion": "LEE",
+      "descripcion_larga": "Marca: LEE, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+     {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/65.png",
+      "descripcion": "ADIDAS",
+      "descripcion_larga": "Marca: ADIDAS, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+     {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/66.png",
+      "descripcion": "ADIDAS",
+      "descripcion_larga": "Marca: ADIDAS, Talla: UNIQUE",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "T-SHIRTS",
+      "precio": 21,
+      "imagen": "img/67.png",
+      "descripcion": "TOMMY HILFIGER",
+      "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: XL",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "CLOTHING SET",
+      "precio": 35,
+      "imagen": "img/68.png",
+      "descripcion": "ADIDAS",
+      "descripcion_larga": "Marca: ADIDAS, Talla: M",
       "stock": {
         "usa": 0,
         "ecuador": 1
