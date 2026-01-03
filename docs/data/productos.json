@@ -424,7 +424,7 @@
       }
     },
      {
-      "nombre": "POLO",
+      "nombre": "T-SHIRTS",
       "precio": 35,
       "imagen": "img/26.png",
       "descripcion": "TOMMY HILFIGER",
@@ -435,11 +435,143 @@
       }
     },
     {
-      "nombre": "POLO",
+      "nombre": "T-SHIRTS",
       "precio": 25,
       "imagen": "img/27.png",
       "descripcion": "NAUTICA",
       "descripcion_larga": "Marca: NAUTICA, Talla: XL",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "POLO",
+      "precio": 38,
+      "imagen": "img/28.png",
+      "descripcion": "NAUTICA",
+      "descripcion_larga": "Marca: NAUTICA, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "POLO",
+      "precio": 42,
+      "imagen": "img/29.png",
+      "descripcion": "TOMMY HILFIGER",
+      "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: M",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "POLO",
+      "precio": 38,
+      "imagen": "img/30.png",
+      "descripcion": "TOMMY HILFIGER",
+      "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: M",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "T-SHIRTS",
+      "precio": 28,
+      "imagen": "img/31.png",
+      "descripcion": "NAUTICA",
+      "descripcion_larga": "Marca: NAUTICA, Talla: M",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "T-SHIRTS",
+      "precio": 22,
+      "imagen": "img/32.png",
+      "descripcion": "ADIDAS",
+      "descripcion_larga": "Marca: ADIDAS, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "POLO",
+      "precio": 38,
+      "imagen": "img/33.png",
+      "descripcion": "TOMMY HILFIGER",
+      "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "T-SHIRTS",
+      "precio": 35,
+      "imagen": "img/34.png",
+      "descripcion": "TOMMY HILFIGER",
+      "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "POLO",
+      "precio": 38,
+      "imagen": "img/35.png",
+      "descripcion": "TOMMY HILFIGER",
+      "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "POLO",
+      "precio": 38,
+      "imagen": "img/36.png",
+      "descripcion": "TOMMY HILFIGER",
+      "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "POLO",
+      "precio": 38,
+      "imagen": "img/37.png",
+      "descripcion": "NAUTICA",
+      "descripcion_larga": "Marca: NAUTICA, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "POLO",
+      "precio": 48,
+      "imagen": "img/38.png",
+      "descripcion": "CALVIN KLEIN",
+      "descripcion_larga": "Marca: CALVIN KLEIN, Talla: L",
+      "stock": {
+        "usa": 0,
+        "ecuador": 1
+      }
+    },
+    {
+      "nombre": "POLO",
+      "precio": 48,
+      "imagen": "img/39.png",
+      "descripcion": "CALVIN KLEIN",
+      "descripcion_larga": "Marca: CALVIN KLEIN, Talla: L",
       "stock": {
         "usa": 0,
         "ecuador": 1
