@@ -91,6 +91,7 @@ function guessCategoria(p){
   if ((productos.perfumes||[]).includes(p)) return 'perfumes';
   if ((productos.Ropa||[]).includes(p)) return 'Ropa';
   if ((productos.generales||[]).includes(p)) return 'generales';
+  if ((productos.Tendencias||[]).includes(p)) return 'Tendencias';
   return '';
 }
 
@@ -111,7 +112,7 @@ function buildCard(p, categoria){
       <div class="price">$${num(p.precio)}</div>
       <div class="card__actions" style="display:flex; gap:8px; justify-content:center;">
         <button class="btn btn-detalle">Ver detalles</button>
-        <a class="btn" href="${waUrl}" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn" href="${waUrl}" target="_blank" rel="noopener">Comprar</a>
       </div>
     </div>
   `;
