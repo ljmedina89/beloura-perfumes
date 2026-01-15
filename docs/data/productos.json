@@ -291,18 +291,7 @@
         "ecuador": 1
       }
     }  ,
-    {
-      "nombre": "T-Shirts",
-      "precio": 22,
-      "imagen": "img/13.png",
-      "descripcion": "PUMA",
-      "descripcion_larga": "Marca: Puma, Talla: L",
-      "stock": {
-        "usa": 0,
-        "ecuador": 1
-      }
-    } ,
-    {
+     {
       "nombre": "T-Shirts",
       "precio": 22,
       "imagen": "img/14.png",
