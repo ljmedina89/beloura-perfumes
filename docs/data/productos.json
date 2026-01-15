@@ -877,7 +877,7 @@
     {
       "nombre": "T-SHIRTS",
       "precio": 25,
-      "imagen": "img/67.png",
+      "imagen": "img/82.png",
       "descripcion": "TOMMY HILFIGER",
       "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: M",
       "stock": {
@@ -888,7 +888,7 @@
     {
       "nombre": "SWEATER",
       "precio": 42,
-      "imagen": "img/67.png",
+      "imagen": "img/84.png",
       "descripcion": "AEROPOSTALE",
       "descripcion_larga": "Marca: AEROPOSTALE, Talla: M",
       "stock": {
@@ -897,11 +897,242 @@
       }
     },
     {
-      "nombre": "SWEATER",
-      "precio": 42,
-      "imagen": "img/67.png",
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/71.png",
+      "descripcion": "ADIDAS",
+      "descripcion_larga": "Marca: ADIDAS, Talla: UNIQUE",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "T-SHIRTS",
+      "precio": 25,
+      "imagen": "img/94.png",
+      "descripcion": "TOMMY HILFIGER",
+      "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: M",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "T-SHIRTS",
+      "precio": 25,
+      "imagen": "img/81.png",
+      "descripcion": "CALVIN KLEIN",
+      "descripcion_larga": "Marca: CALVIN KLEIN, Talla: S",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+     {
+      "nombre": "Men's Sandals",
+      "precio": 25,
+      "imagen": "img/70.png",
+      "descripcion": "NEW BALANCE",
+      "descripcion_larga": "Marca: NEW BALANCE, Talla: 9",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "T-SHIRTS",
+      "precio": 25,
+      "imagen": "img/80.png",
+      "descripcion": "TOMMY HILFIGER",
+      "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: S",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "T-SHIRTS",
+      "precio": 25,
+      "imagen": "img/79.png",
+      "descripcion": "TOMMY HILFIGER",
+      "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: M",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "T-SHIRTS",
+      "precio": 25,
+      "imagen": "img/90.png",
+      "descripcion": "NAUTICA",
+      "descripcion_larga": "Marca: NAUTICA, Talla: S",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "T-SHIRTS",
+      "precio": 22,
+      "imagen": "img/89.png",
       "descripcion": "AEROPOSTALE",
-      "descripcion_larga": "Marca: AEROPOSTALE, Talla: M",
+      "descripcion_larga": "Marca: AEROPOSTALE, Talla: S",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "T-SHIRTS",
+      "precio": 20,
+      "imagen": "img/88.png",
+      "descripcion": "ADIDAS",
+      "descripcion_larga": "Marca: ADIDAS, Talla: M",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "T-SHIRTS",
+      "precio": 25,
+      "imagen": "img/92.png",
+      "descripcion": "TOMMY HILFIGER",
+      "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: L",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "T-SHIRTS",
+      "precio": 25,
+      "imagen": "img/83.png",
+      "descripcion": "TOMMY HILFIGER",
+      "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: S",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "T-SHIRTS",
+      "precio": 25,
+      "imagen": "img/93.png",
+      "descripcion": "CALVIN KLEIN",
+      "descripcion_larga": "Marca: CALVIN KLEIN, Talla: M",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "KIDS CLOTHING SET",
+      "precio": 25,
+      "imagen": "img/87.png",
+      "descripcion": "PUMA",
+      "descripcion_larga": "Marca: PUMA, Talla: 6",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "KIDS CLOTHING SET",
+      "precio": 25,
+      "imagen": "img/91.png",
+      "descripcion": "NIKE",
+      "descripcion_larga": "Marca: NIKE, Talla: 6",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+     {
+      "nombre": "T-SHIRTS",
+      "precio": 25,
+      "imagen": "img/85.png",
+      "descripcion": "DNKY",
+      "descripcion_larga": "Marca: DNKY, Talla: S",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "KIDS CLOTHING SET",
+      "precio": 25,
+      "imagen": "img/86.png",
+      "descripcion": "DNKY",
+      "descripcion_larga": "Marca: DNKY, Talla: 6",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+     {
+      "nombre": "CAP",
+      "precio": 23,
+      "imagen": "img/77.png",
+      "descripcion": "GREAT OUTDOORS",
+      "descripcion_larga": "Marca: GREAT OUTDOORS, Talla: UNIQUE",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "CAP",
+      "precio": 23,
+      "imagen": "img/73.png",
+      "descripcion": "GREAT OUTDOORS",
+      "descripcion_larga": "Marca: GREAT OUTDOORS, Talla: UNIQUE",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+     {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/75.png",
+      "descripcion": "NEW YORK",
+      "descripcion_larga": "Marca: NEW ERA, Talla: UNIQUE",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "CAP",
+      "precio": 25,
+      "imagen": "img/76.png",
+      "descripcion": "ZION",
+      "descripcion_larga": "Marca: ZION, Talla: UNIQUE",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "CAP",
+      "precio": 20,
+      "imagen": "img/74.png",
+      "descripcion": "ZION",
+      "descripcion_larga": "Marca: ZION, Talla: UNIQUE",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "KIDS SWEATER",
+      "precio": 17,
+      "imagen": "img/95.png",
+      "descripcion": "PRIMARK",
+      "descripcion_larga": "Marca: PRIMARK, Talla: 7-8 AÑOS",
       "stock": {
         "usa": 1,
         "ecuador": 0
