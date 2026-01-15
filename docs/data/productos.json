@@ -889,6 +889,17 @@
     {
       "nombre": "SWEATER",
       "precio": 42,
+      "imagen": "img/67.png",
+      "descripcion": "AEROPOSTALE",
+      "descripcion_larga": "Marca: AEROPOSTALE, Talla: M",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "SWEATER",
+      "precio": 42,
       "CODIGO": BL068,
       "imagen": "img/67.png",
       "descripcion": "AEROPOSTALE",
