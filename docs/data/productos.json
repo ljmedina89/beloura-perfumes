@@ -875,6 +875,30 @@
       }
     },
     {
+      "nombre": "T-SHIRTS",
+      "precio": 25,
+      "CODIGO": BL067,
+      "imagen": "img/67.png",
+      "descripcion": "TOMMY HILFIGER",
+      "descripcion_larga": "Marca: TOMMY HILFIGER, Talla: M",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
+      "nombre": "SWEATER",
+      "precio": 42,
+      "CODIGO": BL068,
+      "imagen": "img/67.png",
+      "descripcion": "AEROPOSTALE",
+      "descripcion_larga": "Marca: AEROPOSTALE, Talla: M",
+      "stock": {
+        "usa": 1,
+        "ecuador": 0
+      }
+    },
+    {
       "nombre": "KIDS CLOTHING SET",
       "precio": 35,
       "imagen": "img/68.png",
