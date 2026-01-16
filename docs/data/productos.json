@@ -830,17 +830,7 @@
         "ecuador": 1
       }
     },
-    {
-      "nombre": "CAP",
-      "precio": 22,
-      "imagen": "img/64.png",
-      "descripcion": "LEE",
-      "descripcion_larga": "Marca: LEE, Talla: UNIQUE",
-      "stock": {
-        "usa": 0,
-        "ecuador": 1
-      }
-    },
+    
      {
       "nombre": "CAP",
       "precio": 25,
