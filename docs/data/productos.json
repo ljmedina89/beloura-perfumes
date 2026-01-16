@@ -679,17 +679,6 @@
      {
       "nombre": "CAP",
       "precio": 25,
-      "imagen": "img/50.png",
-      "descripcion": "COLUMBIA",
-      "descripcion_larga": "Marca: COLUMBIA, Talla: UNIQUE",
-      "stock": {
-        "usa": 0,
-        "ecuador": 1
-      }
-    },
-    {
-      "nombre": "CAP",
-      "precio": 25,
       "imagen": "img/51.png",
       "descripcion": "COLUMBIA",
       "descripcion_larga": "Marca: COLUMBIA, Talla: UNIQUE",
@@ -709,18 +698,7 @@
         "ecuador": 1
       }
     },
-    {
-      "nombre": "CAP",
-      "precio": 25,
-      "imagen": "img/53.png",
-      "descripcion": "COLUMBIA",
-      "descripcion_larga": "Marca: COLUMBIA, Talla: UNIQUE",
-      "stock": {
-        "usa": 0,
-        "ecuador": 1
-      }
-    },
-     {
+         {
       "nombre": "CAP",
       "precio": 22,
       "imagen": "img/54.png",
@@ -781,17 +759,6 @@
       "imagen": "img/59.png",
       "descripcion": "NEW BALANCE",
       "descripcion_larga": "Marca: NEW BALANCE, Talla: 8",
-      "stock": {
-        "usa": 0,
-        "ecuador": 1
-      }
-    },
-    {
-      "nombre": "CAP",
-      "precio": 25,
-      "imagen": "img/60.png",
-      "descripcion": "NIKE",
-      "descripcion_larga": "Marca: NIKE, Talla: UNIQUE",
       "stock": {
         "usa": 0,
         "ecuador": 1
