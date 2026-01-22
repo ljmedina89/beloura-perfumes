@@ -52,31 +52,6 @@
       }
     },
     {
-      "nombre": "Valentino's Born in Roma GOLD",
-      "precio": 98,
-      "imagen": "img/gold.webp",
-      "destacado": true,
-      "galeria": [
-        "img/gold.jpg"
-      ],
-      "tamano": "100 ml",
-      "notas": [
-        "Cedro de Virginia",
-        "Ambar",
-        "Vainilla"
-      ],
-      "caracteristicas": [
-        "Elegante",
-        "Moderno"
-      ],
-      "descripcion": "Aroma fresco, intenso y elegante",
-      "descripcion_larga": "Desafía la dualidad, el día y la noche.",
-      "stock": {
-        "usa": 2,
-        "ecuador": 0
-      }
-    },
-    {
       "nombre": "Valentino Born in Roma Intense",
       "precio": 98,
       "imagen": "img/rosado.webp",
@@ -103,32 +78,6 @@
       }
     },
        {
-      "nombre": "Jean Paul Gaultier Elixir Le Male",
-      "precio": 90,
-      "imagen": "img/jean-1.jpg",
-      "destacado": true,
-      "galeria": [
-        "img/jean-2.webp"
-      ],
-      "tamano": "125 ml",
-      "notas": [
-        "Lavanda",
-        "Menta",
-        "Vainilla",
-        "Sandalo"
-      ],
-      "caracteristicas": [
-        "Excelente desempeño",
-        "Gran relación calidad/precio"
-      ],
-      "descripcion": "Una versión intensa y oriental amaderada del clásico Le Male, caracterizada por su elegancia y fuerza. ",
-      "descripcion_larga": "Clásico y oriental, lanzado en 1995 por Francis Kurkdjian. A menudo se describe como un aroma chic, lúdico y moderno.",
-      "stock": {
-        "usa": 2,
-        "ecuador": 0
-      }
-    },
-     {
       "nombre": "Black Opium de Yves Saint Laurent ",
       "precio": 95,
       "imagen": "img/opium-1.webp",
