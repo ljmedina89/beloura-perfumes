@@ -2,7 +2,7 @@
   "perfumes": [
     {
       "nombre": "Dior Sauvage",
-      "precio": 95,
+      "precio": 75,
       "imagen": "img/sauvage.jpg",
       "destacado": true,
       "galeria": [
@@ -28,7 +28,7 @@
     },
     {
       "nombre": "Bleu de Chanel",
-      "precio": 75,
+      "precio": 65,
       "imagen": "img/bleu.png",
       "destacado": true,
       "galeria": [
@@ -53,7 +53,7 @@
     },
     {
       "nombre": "Valentino Born in Roma Intense",
-      "precio": 98,
+      "precio": 75,
       "imagen": "img/rosado.webp",
       "destacado": true,
       "galeria": [
@@ -79,7 +79,7 @@
     },
        {
       "nombre": "Black Opium de Yves Saint Laurent ",
-      "precio": 95,
+      "precio": 75,
       "imagen": "img/opium-1.webp",
       "destacado": true,
       "galeria": [
